@@ -1,0 +1,16 @@
+:host {   
+    .content {
+        padding: 16px;
+        text-align: center;
+        .redirection {
+            font-size: 15px;
+            font-weight: 500;
+        }
+        .spinner-div {
+            display: flex; 
+            justify-content: center; 
+            align-items: center;
+            padding: 16px;
+        }
+    }
+}

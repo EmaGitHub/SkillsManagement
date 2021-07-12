@@ -1,0 +1,20 @@
+<div class="dropdown-inside-topbar" (appClickOutside)="clickOutsideHandler()">
+    <button class="drop-button" (click)="toggleDropdownMenuHandler()">
+        <i class="fa fa-flag"></i>
+    </button>
+    <div class="dropdown-content fadeIn2" [ngClass]="{ 'visible': dropdownVisible }">
+        <div class="dropdown-header">
+            <div class="dropdown-header-inner">{{ 'label.language' | translate}}</div>
+        </div>
+        <a class="dropdown-item" (click)="changeLangHandler('it')">
+            <span class="dropdown-item-inner">
+                Ita
+            </span>
+        </a>
+        <a class="dropdown-item eng" (click)="changeLangHandler('en')">
+            <span class="dropdown-item-inner">
+                Eng
+            </span>
+        </a>
+    </div>
+</div>

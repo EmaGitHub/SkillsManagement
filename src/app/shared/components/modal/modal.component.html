@@ -1,0 +1,7 @@
+<p-dialog [baseZIndex]="1000" header="{{title | translate}}" [(visible)]="display" styleClass="dialog" [@fadeInOut]>
+    <div class="app-modal-wrapper">
+        <ng-content></ng-content>
+    </div>
+</p-dialog>
+
+<div *ngIf="display" class="modal-overlay" (click)="toggle($event)" [@fadeInOut]></div>

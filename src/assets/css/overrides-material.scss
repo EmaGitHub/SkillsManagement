@@ -1,0 +1,75 @@
+.mat-icon-button {
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.tooltip-slided {
+    word-break: break-all !important;
+    white-space: normal !important;
+}
+
+table.mat-table tbody tr.mat-row:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table.mat-table tbody tr.mat-row td.mat-cell {
+    border-top: 1px solid #c8ced3;
+    color: #004977;
+}
+
+.mat-checkbox .mat-checkbox-frame {
+    border-color: #497788;
+    background-color: white;
+  }
+
+.mat-checkbox-checked.mat-accent .mat-checkbox-background {
+    background-color: #497788;
+}
+
+.mat-header-cell {
+    font-size: 14px !important;
+    font-weight: 600;
+}
+
+// BUTTON TOGGLE
+.mat-button-toggle-appearance-standard .mat-button-toggle-label-content {
+    line-height: 35px !important;
+    padding: 0 15px;
+    font-size: 15px !important;
+}
+
+// CARDS
+.mat-card {
+    .mat-card-header {
+        margin: -16px;
+        padding: 0 16px 8px 16px;
+        border-bottom: 1px solid #e8e8e8;
+
+        .mat-card-title {
+            color: #0f78b7;
+        }
+    }
+    .mat-card-content {
+        margin-top: 16px;
+
+        .mat-form-field {
+            padding: 6px 16px;
+            margin: 5px 0;
+            height: 50px;
+            width: 100%;
+        }
+        .mat-form-field-flex {
+            height: 45px;
+        }
+    }
+}
+
+.mat-card:not([class*=mat-elevation-z]) {
+    box-shadow: 1px 4px 6px 1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+}
+
+.mat-tab-body-content {
+    overflow: hidden !important;
+}

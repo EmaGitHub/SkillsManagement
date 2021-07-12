@@ -1,0 +1,96 @@
+[
+  {
+    "id": "fileGroups",
+    "label": "label.fileGroups",
+    "isNavigable": false,
+    "level": 1,
+    "roles": [1,2],
+    "icon": "modx",
+    "children": [
+      {
+        "id": "createFileGroup",
+        "label": "Crea portafoglio",
+        "isNavigable": true,
+        "level": 2,
+        "roles": [1,2],
+        "url": "/mirror-admin/file-group"
+      },
+      {
+        "id": "showFileGroups",
+        "label": "Vis./mod. portafoglio",
+        "isNavigable": true,
+        "level": 2,
+        "roles": [1,2],
+        "url": "/mirror-admin/file-group"
+      },
+      {
+        "id": "manageFiles",
+        "label": "Gestisci pratiche",
+        "isNavigable": true,
+        "level": 2,
+        "roles": [1,2],
+        "url": "/mirror-admin/file-group"
+      },
+      {
+        "id": "associateFileGroup",
+        "label": "Associa portafoglio",
+        "isNavigable": true,
+        "level": 2,
+        "roles": [1,2],
+        "url": "/mirror-admin/file-group"
+      }
+    ]
+  },
+  {
+    "id": "mirrorUsers",
+    "label": "label.extUsers",
+    "isNavigable": false,
+    "level": 1,
+    "roles": [1],
+    "url": "/mirror-admin/mirror-user",
+    "icon": "users",
+    "children": [
+      {
+        "id": "createMirrorUser",
+        "label": "Crea esterno",
+        "isNavigable": true,
+        "level": 2,
+        "roles": [1],
+        "url": "/mirror-admin/mirror-user/create"
+      },
+      {
+        "id": "editMirrorUser",
+        "label": "Modifica esterno",
+        "isNavigable": true,
+        "level": 2,
+        "roles": [1],
+        "url": "/mirror-admin/mirror-user/edit"
+      },
+      {
+        "id": "searchMirrorUser",
+        "label": "Ricerca esterno",
+        "isNavigable": true,
+        "level": 2,
+        "roles": [1],
+        "url": "/mirror-admin/mirror-user/list"
+      },
+      {
+        "id": "test",
+        "label": "Test refresh",
+        "isNavigable": false,
+        "level": 2,
+        "roles": [1],
+        "children": [
+          {
+            "id": "testChild",
+            "label": "Test refresh child",
+            "isNavigable": true,
+            "level": 3,
+            "roles": [1],
+            "url": "/mirror-admin/mirror-user/test"
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,224 @@
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadein { /* Firefox */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadein { /* Safari and Chrome */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes fadein { /* Opera */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  animation: fadein 1s;
+  -moz-animation: fadein 1s; /* Firefox */
+  -webkit-animation: fadein 1s; /* Safari and Chrome */
+  -o-animation: fadein 1s; /* Opera */
+}
+
+.fadeIn2 {
+  animation: fadein .2s;
+  -moz-animation: fadein .2s; /* Firefox */
+  -webkit-animation: fadein .2s; /* Safari and Chrome */
+  -o-animation: fadein .2s; /* Opera */
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar,
+scroll {
+  width: 9px;
+  height: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: #cfcfcf; 
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: #999999; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #777777; 
+}
+
+* {
+  scrollbar-color: #999999;
+  scrollbar-width: thin;
+}
+
+* {
+  scrollbar-face-color:#999999;
+  scrollbar-arrow-color:#999999;
+  scrollbar-track-color:#cfcfcf;
+  // scrollbar-shadow-color:#777777;
+  // scrollbar-highlight-color:#999999;
+  // scrollbar-3dlight-color:#808080;
+  scrollbar-darkshadow-color:#777777;
+}
+
+/* LOAD SPINNER */
+.loading-shade {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 101;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0px;
+
+  &.inside-card-with-header {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+  &.no-border-radius {
+    border-radius: 0;
+  }
+}
+
+/* MODALS */
+.ui-dialog-content {
+
+  .mat-header-cell {
+    text-align: center !important;
+  }
+ 
+  td {
+    text-align: center; 
+  }
+
+  .field-box {
+
+    .align-left {
+        float: left;
+    }
+
+    .align-right {
+        float: right;
+        font-weight: 600;
+    }
+  }
+}
+
+/* DROPDOWN INSIDE APP TOPBAR */
+// header: cambio lingua e info utente
+.dropdown-inside-topbar {
+  position: relative;
+  display: inline-block;
+  
+  .drop-button {
+    background: none;
+    color: #0f78b7;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+      color: #4dbcff;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    z-index: 134;
+    right: 0;
+    padding: 0;
+    margin: 0.125rem 0 0;
+    color: #23282c;
+    text-align: left;
+    list-style: none;
+    background-color: #ffffff;
+    background-clip: padding-box;
+    border: 1px solid #cdd3d8;
+    border-radius: 5px;
+    font-size: 13px;
+
+    &.visible {
+      display: block;
+    }
+  
+    .dropdown-header {
+      padding: 8px 20px;
+      font-size: 13px;
+      font-weight: 500;
+
+      > .dropdown-header-inner {
+        border-bottom: 1px solid #bdc6ca;
+        padding: 4px 5px 3px;
+      }
+    }
+
+    a.dropdown-item {
+      position: relative;
+      padding: 5px 15px;
+      border-bottom: 1px solid #c8ced3;
+      display: block;
+      width: 100%;
+      clear: both;
+      font-weight: 400;
+      color: #23282c;
+      text-align: inherit;
+      white-space: nowrap;
+      background-color: transparent;
+      border: 0;
+    }
+
+    /* Links inside the dropdown */
+    a.dropdown-item {
+      color: #23282c;
+      text-decoration: none;
+      display: block;
+      cursor: pointer;
+      padding: 2px 8px;
+
+      > .dropdown-item-inner {
+        display: block;
+        background: #f1f1f1;
+        padding: 3px 0;
+        text-align: center;
+        border-radius: 3px;
+        font-size: 11px;
+        color: #6e7479;
+
+        &:hover {
+          background-color: #eaeaea;
+        }
+      }
+     }
+  }
+}

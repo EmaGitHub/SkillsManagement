@@ -1,0 +1,64 @@
+:host {
+
+    .paginator,
+    .page-info,
+    .page-switcher {
+        display: flex;
+        align-items: baseline;
+    }
+
+    .page-sizer {
+        & > label {
+            font-size: 12px;
+        }
+    
+        & > select {
+            font-size: 12px;
+            border: 1px solid #8a8c92;
+            margin: 0 5px;
+            color: #8d8e94;
+        }
+    }
+
+    .page-info {
+        margin: 0 5px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        
+        & > .inner {
+            font-size: 12px;
+        }
+    }
+
+    .page-switcher {
+
+        button.command {
+            background: none;
+            border: none;
+            margin: 0 1px;
+            text-align: center;
+            cursor: pointer;
+            
+            & > i {
+                color: #8a8c92;
+            }
+            
+            &:hover > i {
+                color: #404248;
+            }
+
+            &:disabled {
+                cursor: default;
+    
+                & > i {
+                    color: #bfbfbf;
+                }
+            }
+            
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+}

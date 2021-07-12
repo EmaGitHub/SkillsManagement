@@ -1,0 +1,71 @@
+:host {
+    
+    .form {
+        margin: 20px 10px;
+        text-align: center;
+
+        .register-form {
+            padding-top: 10px;
+            border-radius: 8px;
+            border: 1px solid gray;
+            width: 300px;
+            background-color: white;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 10px;
+
+            .register-field {
+                height: 56px;
+            }
+
+            .adminCheckbox {
+                padding-left: 20px;
+                margin-bottom: 15px;
+                margin-top: 10px;
+            }
+        }
+
+        .buttons {
+            text-align: center;
+            color: #272727;
+
+            .icon-button {
+                display: inline-grid;
+                width: 100px;
+                height: 35px;
+                margin: 16px !important;
+                padding: 5px 0;
+                font-size: 16px;
+                border: 1px solid #c3ced4;
+                border-radius: 7px;
+                cursor: pointer;
+                transition: all .3s ease-in-out;
+                background-color: white;
+                outline-style: none;
+                box-shadow: 2px 3px 10px;
+
+                .button-icon-inside {
+                    font-size: 52px;
+                    margin-top: 14px;
+                    color: #3269bb;
+                    transition: all .3s ease-in-out;
+                }
+
+                &:hover {
+                    transform: scale(1.05);
+                    font-size: 16px;
+                    
+                    .button-icon-inside {
+                        font-size: 50px;
+                        margin-top: 16px;
+                    }
+                }
+            }
+        }
+
+        .register {
+            cursor: pointer;
+            color: #0c58a9;
+        }
+    }
+}

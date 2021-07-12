@@ -1,0 +1,36 @@
+<div *ngIf="user" class="logged-user">
+    <div class="logged-user-inner header">
+
+        <div class="dropdown-inside-topbar" (appClickOutside)="clickOutsideHandler()">
+            <button class="drop-button" (click)="toggleDropdownMenuHandler()">
+                <i class="fa fa-user-circle-o"></i>
+            </button>
+            <div class="dropdown-content fadeIn2" [ngClass]="{ 'visible': dropdownVisible }">
+                <div class="dropdown-header">
+                    <div class="dropdown-header-inner">{{ 'label.user' | translate }}</div>
+                </div>
+                <div class="user-info-box">
+                    <div class="identification-number app-dropdown-item">
+                        <div ><i class="fa fa-key mr1"></i></div>
+                        <div >{{ user.userId }}</div>
+                    </div>
+                    <div class="name app-dropdown-item">
+                        <div ><i class="fa fa-user mr1"></i></div>
+                        <div class="first">{{ user.firstName }}</div>
+                        <div class="last">{{ user.lastName }}</div>
+                    </div>
+                    <div class="society app-dropdown-item">
+                        <div ><i class="fa fa-company mr1"></i></div>
+                        <div > - </div>
+                    </div>
+                    <div class="logout app-dropdown-item">
+                        <button class="logout-button btn btn-primary btn-sm" (click)="logout($event)">
+                            <span><i class="button-icon-inside fa fa-sign-out"></i> {{'label.exit' | translate}}</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

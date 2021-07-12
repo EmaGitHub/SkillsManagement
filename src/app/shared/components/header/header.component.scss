@@ -1,0 +1,17 @@
+:host {
+
+    .header-img {
+        background-color: white;
+        border-radius: 100px;
+        height: 30px;
+        width: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid green;
+    }
+
+    .nav-link:hover {
+        color: #4dbcff;
+    }
+}

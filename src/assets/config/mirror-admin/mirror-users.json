@@ -1,0 +1,10 @@
+{
+    "totalItems": 5,
+    "data": [
+        { "id": 1, "name": "Carlo", "lastName": "Rossi", "status": true},
+        { "id": 2, "name": "Carlo", "lastName": "Rossi", "status": true},
+        { "id": 3, "name": "Carlo", "lastName": "Rossi", "status": true},
+        { "id": 4, "name": "Carlo", "lastName": "Rossi", "status": true},
+        { "id": 5, "name": "Carlo", "lastName": "Rossi", "status": true}
+    ]
+}

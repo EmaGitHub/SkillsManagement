@@ -1,0 +1,47 @@
+{
+    "label": {
+        "title": "Gestione competenze",
+        "customers": "Clienti",
+        "language": "Lingua",
+        "user": "Utente",
+        "first_name": "Nome",
+        "lastName": "Cognome",
+        "access": "Accedi",
+        "exit": "Esci",
+        "register": "Registrati",
+        "registerLabel": "Non hai un'account? Registrati",
+        "loginLabel": "Vai al tab di login"
+    },
+    "action": {
+        "filter": "Filtra",
+        "refreshPage": "Aggiorna pagina"
+    },
+    "message": {
+        "success": {
+            "userCreated": "Utente creato",
+            "loginSucceeded": "Login avvenuto con successo",
+            "loadSucceded": "Caricamento avvenuto con successo",
+            "logoutSucceded": "Disconnessione avvenuta con successo"
+        },
+        "warn": {
+            "noDataFound": "Nessun dato trovato"
+        },
+        "error": {
+            "error": "Errore",
+            "wrongCredentials": "Credenziali non valide",
+            "genericError": "Si e' verificato un errore",
+            "loginFailed": "Login fallita",
+            "dataInconsistencyError": "Errore di inconsistenza dati",
+            "logoutFailed": "Disconnessione fallita"
+        },
+        "tooltip": {
+        }
+    },
+    "form": {
+        "validationError": {
+            "requiredField": "Campo obbligatorio",
+            "dateBadFormat": "Data in formato non corretto",
+            "mustBeInteger": "Non e' un numero intero"
+        }
+    }
+}

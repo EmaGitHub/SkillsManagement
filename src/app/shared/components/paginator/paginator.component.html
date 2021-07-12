@@ -1,0 +1,27 @@
+<div class="paginator">
+    <div class="page-sizer">
+        <label>Items per page</label>
+        <select (change)="changePageSizeHandler($event)" [disabled]="isNoPageAvailable()">
+            <option *ngFor="let pageSize of pageSizes; let i = index"
+                    [value]="pageSize"
+                    [selected]="isSelected(pageSize)">{{pageSize}}</option>
+        </select>
+    </div>
+    <div class="page-info">
+        <div class="inner">Page {{this.currentPage}} of {{this.pageConfigs.length}}</div>
+    </div>
+    <div class="page-switcher">
+        <button class="command first-page" [disabled]="isNoPageAvailable() || isOnFirstPage()" (click)="toFirstPageHandler()">
+            <i class="fa fa-angle-double-left"></i>
+        </button>
+        <button class="command prev-page" [disabled]="isNoPageAvailable() || !isPrevPageAvailable()" (click)="prevPageHandler()">
+            <i class="fa fa-angle-left"></i>
+        </button>
+        <button class="command next-page" [disabled]="isNoPageAvailable() || !isNextPageAvailable()" (click)="nextPageHandler()">
+            <i class="fa fa-angle-right"></i>
+        </button>
+        <button class="command last-page" [disabled]="isNoPageAvailable() || isOnLastPage()" (click)="toLastPageHandler()">
+            <i class="fa fa-angle-double-right"></i>
+        </button>
+    </div>
+</div>

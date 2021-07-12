@@ -1,0 +1,22 @@
+<aside class="main-sidebar sidebar-dark-primary elevation-4 fadeIn">
+    <div class="logo">
+        <div class="inner">
+            <img class="logo-img" src="assets/imgs/plansoft.png" alt="logo">
+        </div>
+    </div>
+    <div class="sidebar">
+        <div class="inner">
+            <div class="menu">
+                <!-- user name -->
+                <ng-container>
+                    <div class="account-logged-box">
+                        <div class="admin-label" [routerLink]="['/']">Ectx Admin</div>
+                    </div>
+                </ng-container>
+                <ng-container *ngFor="let item of menuItems">
+                    <app-left-menu-link [config]="item"></app-left-menu-link>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+</aside>

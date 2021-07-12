@@ -1,0 +1,32 @@
+<div *ngIf="visibleToUser" class="menu-item" [class.open]="open" [class.closed]="closed">
+    <!-- clickable link -->
+    <div class="item {{getLevelCssClass()}}"
+            *ngIf="!config.isNavigable"
+            [class.navigable]="config.isNavigable"
+            (click)="openSubMenuHandler()">
+        <ng-container [ngTemplateOutlet]="buttonInternal"></ng-container>
+    </div>
+    <div class="item level{{config.level}}"
+            [ngClass]="{ 'active': active }"
+            *ngIf="config.isNavigable"
+            [class.navigable]="config.isNavigable"
+            [routerLink]="[config.url]"
+            (click)="activeMenuItemHandler()">
+        <ng-container [ngTemplateOutlet]="buttonInternal"></ng-container>
+    </div>
+    <!-- child links -->
+    <div class="children" [ngStyle]="{'max-height.px': subMenuMaxHeight}" *ngIf="config.children">
+        <ng-container *ngFor="let item of config.children">
+            <app-left-menu-link [config]="item" (heightChange)='changeHeight($event)'></app-left-menu-link>
+        </ng-container>
+    </div>
+</div>
+    
+<ng-template #buttonInternal>
+    <div class="label open-close-icon">
+        <i *ngIf="config.icon"
+            class="menu-item-icon icon mr1 {{ getIconClass() }}"></i>
+        {{config.label | translate}}
+    </div>
+    <div class="open-close-icon"><i *ngIf="config.children" class="fa fa-chevron-down"></i></div>
+</ng-template>

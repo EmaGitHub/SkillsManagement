@@ -1,0 +1,38 @@
+<div class="form">
+    <div class="register-form row">
+            <mat-form-field class="register-field col-12">
+                <input matInput placeholder="{{'label.first_name' | translate}}" [(ngModel)]="firstName" name="firstName">
+            </mat-form-field>
+
+            <mat-form-field class="register-field col-12">
+                <input matInput placeholder="{{'label.lastName' | translate}}" [(ngModel)]="lastName" name='lastName'>
+            </mat-form-field>
+
+            <mat-form-field class="register-field col-12">
+                <input matInput placeholder="E-mail" [(ngModel)]="email" name='email'>
+            </mat-form-field>
+
+            <mat-form-field class="register-field col-12">
+                <input matInput placeholder="Username *" [(ngModel)]="username" name="username">
+            </mat-form-field>
+
+            <mat-form-field class="register-field col-12">
+                <input matInput type="password" placeholder="Password *" [(ngModel)]="password" name="password">
+            </mat-form-field>
+
+            <mat-checkbox [(ngModel)]="systemAdmin" name="systemAdmin" class="adminCheckbox">System Admin User</mat-checkbox>
+
+    </div>
+
+    <div class="buttons">
+        <div class="navigate-buttons">
+            <div class="navigate-buttons-inner">
+                <div class="icon-button" (click)="register()">
+                    <span class="lbl">{{'label.register' | translate}}</span>
+                </div>
+            </div>                
+        </div>
+    </div>
+
+    <a (click)="goLogin()" class="register">{{'label.loginLabel' | translate}}</a>
+</div>

@@ -1,0 +1,11 @@
+<div class="wrapper" [ngClass]="{ 'big-screen-sidebar-collapsed': bigScreenSidebarCollapsed, 'little-screen-sidebar-expanded': littleScreenSidebarExpanded }">
+    <app-header></app-header>
+    <app-sidebar #sidebar></app-sidebar>
+    
+    <div class="sidebar-overlay" (click)="clickOnSidebarOverlayHandler()"></div>
+    
+    <div class="content-wrapper">
+        <router-outlet></router-outlet>
+    </div>
+    <!-- <app-footer></app-footer> -->
+</div>

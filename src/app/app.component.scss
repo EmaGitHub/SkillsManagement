@@ -1,0 +1,7 @@
+:host {
+    .session-expired {
+        ::ng-deep .ui-dialog-titlebar {
+            display: none !important;
+        }
+    } 
+ }

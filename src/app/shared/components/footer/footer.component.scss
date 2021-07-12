@@ -1,0 +1,53 @@
+:host {
+    
+    .footer {
+        width: 100%;
+        height: 60px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        text-align: center;
+        background-color: #092931;
+
+        .footer-content {
+            color: white;
+            font-size: 12px;
+            position: relative;
+            width: 100%;
+            display: flex;
+
+            .link-data {
+                color: white;
+                font-weight: 500;
+                font-size: 13px;
+            }
+            .link-data:hover {
+                text-decoration: underline;
+                cursor: pointer;
+            }
+            
+            .left {
+                position: absolute;
+                left: 0;
+                padding: 12px;
+            }
+            .social {
+                width: 100%;
+                a {
+                    color: white;
+                    .social-icon {
+                        font-size: 32px;
+                        cursor: pointer;
+                        padding: 15px 5px;
+                    }
+                }
+            }
+            .right {
+                position: absolute;
+                right: 0;
+                padding: 12px;
+
+            }
+        }
+    }
+}

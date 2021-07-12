@@ -1,0 +1,31 @@
+<div class="login-screen fadeIn">
+
+    <div class="header-container">
+        <div class="header">
+            <div class="container">{{'label.title' | translate}}</div>
+        </div>
+    </div>
+
+    <mat-tab-group mat-align-tabs="center" class="mat-tab-group" [(selectedIndex)]="tabSelectedIndex" dynamicHeight>
+
+        <!-- Login TAB -->
+        <mat-tab label="Login">
+            <app-login (selectedTabIndex)="changeTabSelectedIndex($event)"></app-login>
+        </mat-tab>
+
+        <!-- Register TAB -->
+        <mat-tab label="{{'label.register' | translate}}">
+            <app-register (selectedTabIndex)="changeTabSelectedIndex($event)"></app-register>
+        </mat-tab>
+
+    </mat-tab-group>
+        
+    <div class="language-selection">
+        <mat-button-toggle-group class="lang-toggler" name="language" aria-label="language" (change)="changeLangHandler($event)">
+            <mat-button-toggle value="it" [checked]="selectedLanguage === 'it'">It</mat-button-toggle>
+            <mat-button-toggle value="en" [checked]="selectedLanguage === 'en'">En</mat-button-toggle>
+        </mat-button-toggle-group>
+    </div>
+        
+    <!-- <app-footer></app-footer> -->
+</div>

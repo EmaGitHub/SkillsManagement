@@ -1,0 +1,46 @@
+{
+    "label": {
+        "title": "Skills management",
+        "customers": "Customers",
+        "language": "Language",
+        "user": "User",
+        "first_name": "First name",
+        "lastName": "Last name",
+        "access": "Access",
+        "exit": "Exit",
+        "register": "Register",
+        "registerLabel": "Do not have any account? Sign-up",
+        "loginLabel": "Go to login tab"
+    },
+    "action": {
+        "filter": "Filter"
+    },
+    "message": {
+        "success": {
+            "userCreated": "User created successfully",
+            "loginSucceded": "Login succeeded",
+            "loadSuccessed": "Load successed",
+            "logoutSuccessed": "Logout successed"
+        },
+        "warn": {
+            "noDataFound": "No data found"
+        },
+        "error": {
+            "error": "Error",
+            "wrongCredentials": "Credentials are not valid",
+            "genericError": "Something goes wrong",
+            "loginFailed": "Login failed",
+            "dataInconsistencyError": "Data inconsistency error",
+            "logoutFailed": "Logout failed"
+        },
+        "tooltip": {
+        }
+    },
+    "form": {
+        "validationError": {
+            "requiredField": "Required field",
+            "dateBadFormat": "Date wrong format",
+            "mustBeInteger": "Must be an integer"
+        }
+    }
+}

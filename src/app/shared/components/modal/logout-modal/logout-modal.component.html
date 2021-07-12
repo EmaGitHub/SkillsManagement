@@ -1,0 +1,8 @@
+<div class="content">
+    <h3>
+        {{((logoutSuccessed && logoutSuccessed === true) ? 'message.success.logoutSuccessed' : 'message.error.logoutFailed') | translate}}
+        <i *ngIf="logoutSuccessed" class="button-icon-inside fa fa fa-smile-o text-danger success-icon"></i>
+        <i *ngIf="!logoutSuccessed" class="button-icon-inside fa fa fa-frown-o text-danger"></i>
+    </h3>
+    <div class="spinner-div"><mat-spinner [diameter]="36"></mat-spinner></div>
+</div>

@@ -1,0 +1,43 @@
+:host {
+
+    .account-logged-box {
+        background-color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        padding: 16px 0 14px;
+        border-bottom: 1px solid #dedede;
+        color: #81878c;
+        height: 80px;
+
+        background-image: url('../../../../assets/imgs/wall.jpeg');
+        background-size: cover;
+        justify-content: center;
+        display: block;
+        text-align: center;
+
+        .admin-label {
+            position: relative;
+            margin: 0px 10%;
+            padding: 6px 0;
+            border: 1px solid;
+            border-radius: 16px;
+            color: white;
+            font-size: 22px;
+            background-color: #00010282;
+            cursor: pointer;
+        }
+
+        .account-icon {
+            display: flex;
+            justify-content: center;
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .name {
+            display: flex;
+            justify-content: center;
+            font-size: 12px;
+        }
+    }
+}
