@@ -1,23 +1,23 @@
 <div class="form">
     <div class="register-form row">
             <mat-form-field class="register-field col-12">
-                <input matInput placeholder="{{'label.first_name' | translate}}" [(ngModel)]="firstName" name="firstName">
+                <input matInput placeholder="{{'label.first_name' | translate}}" [(ngModel)]="firstName" name="firstName" (keyup.enter)="register()">
             </mat-form-field>
 
             <mat-form-field class="register-field col-12">
-                <input matInput placeholder="{{'label.lastName' | translate}}" [(ngModel)]="lastName" name='lastName'>
+                <input matInput placeholder="{{'label.lastName' | translate}}" [(ngModel)]="lastName" name='lastName' (keyup.enter)="register()">
             </mat-form-field>
 
             <mat-form-field class="register-field col-12">
-                <input matInput placeholder="E-mail" [(ngModel)]="email" name='email'>
+                <input matInput placeholder="E-mail" [(ngModel)]="email" name='email' (keyup.enter)="register()">
             </mat-form-field>
 
             <mat-form-field class="register-field col-12">
-                <input matInput placeholder="Username *" [(ngModel)]="username" name="username">
+                <input matInput placeholder="Username *" [(ngModel)]="username" name="username" (keyup.enter)="register()">
             </mat-form-field>
 
             <mat-form-field class="register-field col-12">
-                <input matInput type="password" placeholder="Password *" [(ngModel)]="password" name="password">
+                <input matInput type="password" placeholder="Password *" [(ngModel)]="password" name="password" (keyup.enter)="register()">
             </mat-form-field>
 
             <mat-checkbox [(ngModel)]="systemAdmin" name="systemAdmin" class="adminCheckbox">System Admin User</mat-checkbox>

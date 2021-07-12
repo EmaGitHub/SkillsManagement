@@ -12,6 +12,10 @@
         "registerLabel": "Do not have any account? Sign-up",
         "loginLabel": "Go to login tab"
     },
+    "menu": {
+        "skills": "Skills",
+        "users": "Users"
+    },
     "action": {
         "filter": "Filter"
     },

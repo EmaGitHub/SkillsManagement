@@ -1,7 +1,7 @@
 [
   {
-    "id": "fileGroups",
-    "label": "label.fileGroups",
+    "id": "skills",
+    "label": "menu.skills",
     "isNavigable": false,
     "level": 1,
     "roles": [1,2],
@@ -13,7 +13,7 @@
         "isNavigable": true,
         "level": 2,
         "roles": [1,2],
-        "url": "/mirror-admin/file-group"
+        "url": "/skills/home"
       },
       {
         "id": "showFileGroups",
@@ -21,7 +21,7 @@
         "isNavigable": true,
         "level": 2,
         "roles": [1,2],
-        "url": "/mirror-admin/file-group"
+        "url": "/skills/home"
       },
       {
         "id": "manageFiles",
@@ -29,7 +29,7 @@
         "isNavigable": true,
         "level": 2,
         "roles": [1,2],
-        "url": "/mirror-admin/file-group"
+        "url": "/skills/home"
       },
       {
         "id": "associateFileGroup",
@@ -37,17 +37,17 @@
         "isNavigable": true,
         "level": 2,
         "roles": [1,2],
-        "url": "/mirror-admin/file-group"
+        "url": "/skills/home"
       }
     ]
   },
   {
-    "id": "mirrorUsers",
-    "label": "label.extUsers",
+    "id": "users",
+    "label": "menu.users",
     "isNavigable": false,
     "level": 1,
     "roles": [1],
-    "url": "/mirror-admin/mirror-user",
+    "url": "/skills/home",
     "icon": "users",
     "children": [
       {
@@ -56,7 +56,7 @@
         "isNavigable": true,
         "level": 2,
         "roles": [1],
-        "url": "/mirror-admin/mirror-user/create"
+        "url": "/skills/home"
       },
       {
         "id": "editMirrorUser",
@@ -64,7 +64,7 @@
         "isNavigable": true,
         "level": 2,
         "roles": [1],
-        "url": "/mirror-admin/mirror-user/edit"
+        "url": "/skills/home"
       },
       {
         "id": "searchMirrorUser",
@@ -72,7 +72,7 @@
         "isNavigable": true,
         "level": 2,
         "roles": [1],
-        "url": "/mirror-admin/mirror-user/list"
+        "url": "/skills/home"
       },
       {
         "id": "test",
@@ -87,7 +87,7 @@
             "isNavigable": true,
             "level": 3,
             "roles": [1],
-            "url": "/mirror-admin/mirror-user/test"
+            "url": "/skills/home"
           }
         ]
       }

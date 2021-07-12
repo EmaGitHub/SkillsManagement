@@ -1,108 +1,96 @@
 [
   {
-    "id": "fileGroups",
-    "label": "label.fileGroups",
-    "isNavigable": true,
-    "level": 1,
-    "role": 1,
-    "url": "/vdr/file-group",
-    "icon": "modx"
-  }, {
-    "id": "customers",
-    "label": "label.customers",
-    "isNavigable": true,
-    "level": 1,
-    "role": 2,
-    "url": "/vdr/customer",
-    "icon": "users"
-  },
-  {
-    "label": "Country",
+    "id": "skills",
+    "label": "menu.skills",
     "isNavigable": false,
     "level": 1,
+    "roles": [1,2],
+    "icon": "modx",
     "children": [
       {
-        "label": "South Region",
-        "isNavigable": false,
+        "id": "createFileGroup",
+        "label": "Crea portafoglio",
+        "isNavigable": true,
         "level": 2,
-        "children": [
-          {
-            "label": "Cold City",
-            "isNavigable": true,
-            "level": 3,
-            "url": "/"
-          }, {
-            "label": "City of Beasts",
-            "isNavigable": true,
-            "level": 3,
-            "url": "/"
-          }, {
-            "label": "Little City",
-            "isNavigable": true,
-            "level": 3,
-            "url": "/"
-          }
-        ]
-      }, {
-        "label": "East Region",
-        "isNavigable": false,
+        "roles": [1,2],
+        "url": "/skills/home"
+      },
+      {
+        "id": "showFileGroups",
+        "label": "Vis./mod. portafoglio",
+        "isNavigable": true,
         "level": 2,
-        "children": [
-          {
-            "label": "Far City",
-            "isNavigable": true,
-            "level": 3,
-            "url": "/"
-          }, {
-            "label": "Lake City",
-            "isNavigable": true,
-            "level": 3,
-            "url": "/"
-          }
-        ]
+        "roles": [1,2],
+        "url": "/skills/home"
+      },
+      {
+        "id": "manageFiles",
+        "label": "Gestisci pratiche",
+        "isNavigable": true,
+        "level": 2,
+        "roles": [1,2],
+        "url": "/skills/home"
+      },
+      {
+        "id": "associateFileGroup",
+        "label": "Associa portafoglio",
+        "isNavigable": true,
+        "level": 2,
+        "roles": [1,2],
+        "url": "/skills/home"
       }
     ]
-  }, {
-    "label": "Granfather",
+  },
+  {
+    "id": "users",
+    "label": "menu.users",
     "isNavigable": false,
     "level": 1,
+    "roles": [1],
+    "url": "/skills/home",
+    "icon": "users",
     "children": [
       {
-        "label": "Son",
+        "id": "createMirrorUser",
+        "label": "Crea esterno",
+        "isNavigable": true,
+        "level": 2,
+        "roles": [1],
+        "url": "/skills/home"
+      },
+      {
+        "id": "editMirrorUser",
+        "label": "Modifica esterno",
+        "isNavigable": true,
+        "level": 2,
+        "roles": [1],
+        "url": "/skills/home"
+      },
+      {
+        "id": "searchMirrorUser",
+        "label": "Ricerca esterno",
+        "isNavigable": true,
+        "level": 2,
+        "roles": [1],
+        "url": "/skills/home"
+      },
+      {
+        "id": "test",
+        "label": "Test refresh",
         "isNavigable": false,
         "level": 2,
+        "roles": [1],
         "children": [
           {
-            "label": "Brother",
+            "id": "testChild",
+            "label": "Test refresh child",
             "isNavigable": true,
             "level": 3,
-            "url": "/"
-          }, {
-            "label": "Little Sister",
-            "isNavigable": true,
-            "level": 3,
-            "url": "/"
-          }
-        ]
-      }, {
-        "label": "Daughter",
-        "isNavigable": false,
-        "level": 2,
-        "children": [
-          {
-            "label": "Big Sister",
-            "isNavigable": true,
-            "level": 3,
-            "url": "/"
-          }, {
-            "label": "My Cousin",
-            "isNavigable": true,
-            "level": 3,
-            "url": "/"
+            "roles": [1],
+            "url": "/skills/home"
           }
         ]
       }
     ]
   }
 ]
-  

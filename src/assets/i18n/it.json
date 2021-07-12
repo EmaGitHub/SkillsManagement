@@ -12,6 +12,10 @@
         "registerLabel": "Non hai un'account? Registrati",
         "loginLabel": "Vai al tab di login"
     },
+    "menu": {
+        "skills": "Competenze",
+        "users": "Utenti"
+    },
     "action": {
         "filter": "Filtra",
         "refreshPage": "Aggiorna pagina"
