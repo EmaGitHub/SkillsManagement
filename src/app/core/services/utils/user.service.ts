@@ -1,31 +1,53 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { User } from 'src/app/pages/account/models/User';
+import { JwtResponse } from 'src/app/shared/domain/auth/jwt-response';
 
 @Injectable()
 export class UserService {
 
-    constructor() { }
+    private currentUserSubject?: Subject<User>;
+    public currentUser?: Observable<User>;
+
+    constructor() { 
+        let user = localStorage.getItem('currentUser');
+        if (user != undefined) {
+            this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(user));
+            this.currentUser = this.currentUserSubject.asObservable();
+        }
+    }
+
+    public getCurrentUserAsObservable(): Observable<User> {
+        if (this.currentUserSubject)
+            return this.currentUserSubject;
+        else {
+            this.currentUserSubject = new Subject<User>();
+            this.currentUser = this.currentUserSubject.asObservable();
+            return this.currentUserSubject;
+        }
+    }
+
+    public getUserSubject(): Subject<User> {
+        return this.currentUserSubject;
+    }
 
     public saveUserDataInLocalStorage(user: User) {
-        localStorage.setItem('user-first-name', user.firstName);
-        localStorage.setItem('user-last-name', user.lastName);
-        localStorage.setItem('user-id', String(user.userId));
+        localStorage.setItem('currentUser', JSON.stringify(user));
         return true;
     }
 
     public getUser(): User {
-        const user = {} as User;
-        user.firstName = localStorage.getItem('user-first-name');
-        user.lastName = localStorage.getItem('user-last-name');
-        user.userId = Number(localStorage.getItem('user-id'));
+        let user = {} as User;
+        user = JSON.parse(localStorage.getItem('currentUser'));
         return user;
     }
 
     public getFullName(): string {
-        const first: string = localStorage.getItem('user-first-name');
-        const last: string = localStorage.getItem('user-last-name');
-        if (first || last) {
-            return `${first} ${last}`
+        let user = {} as User;
+        user = JSON.parse(localStorage.getItem('currentUser'));
+
+        if (user.firstName || user.lastName) {
+            return `${user.firstName} ${user.lastName}`
         }
         return null;
     }
@@ -34,12 +56,5 @@ export class UserService {
         return localStorage.getItem('user-id');
     }
 
-    public getCompanyName(): string {
-        return localStorage.getItem('company-name');
-    }
-
-    public getBusinessName(): string {
-        return localStorage.getItem('business-name');
-    }
 
 }

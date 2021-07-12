@@ -1,35 +1,18 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, Observable, of, Subject } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
+import { UserService } from './utils/user.service';
 import { User } from 'src/app/pages/account/models/User';
+import { JwtResponse } from 'src/app/shared/domain/auth/jwt-response';
+import { Router } from '@angular/router';
 
 @Injectable({ providedIn: 'root' })
 export class AuthenticationService {
 
-    private currentUserSubject?: Subject<User>;
-    public currentUser?: Observable<User>;
     apiUrl = environment.apiUrl;
 
-    constructor(private http: HttpClient) {
-        let user = localStorage.getItem('currentUser');
-        if (user != undefined) {
-            this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(user));
-            this.currentUser = this.currentUserSubject.asObservable();
-        }
-    }
-
-    public getCurrentUserAsObservable(): Observable<User> {
-        if (this.currentUserSubject)
-            return this.currentUserSubject;
-        else {
-            //let user = localStorage.getItem('currentUser');
-            this.currentUserSubject = new Subject<User>();
-            this.currentUser = this.currentUserSubject.asObservable();
-            return this.currentUserSubject;
-        }
-    }
+    constructor(private http: HttpClient, private userService: UserService, private route: Router) { }
 
     login(username: string, password: string) {
         let body = { 
@@ -39,18 +22,20 @@ export class AuthenticationService {
         return this.http.post<any>("public/authenticate", body)
             .pipe(
                 map(
-                    resp => {
-                        console.log("RESP ",resp)
+                    (resp: JwtResponse) => {
                         // login successful if there's a jwt token in the response
                         if (resp && resp.token) {
                             // store user details and jwt token in local storage to keep user logged in between page refreshes
                             localStorage.setItem('currentUser', JSON.stringify(resp));
-                            this.currentUserSubject?.next(resp);
+                            const user = {} as User;
+                            user.username = resp.username;
+                            user.token = resp.token;
+                            this.userService.getUserSubject().next(user);
                         }
                         return resp;
                     },
                     catchError(err => {
-                        console.log("ERR ",err)
+                        console.log("Authentication error ",err)
                         return err;
                 })
             )
@@ -70,6 +55,8 @@ export class AuthenticationService {
 
     logout() {
         // remove user from local storage to log user out
+        console.log("Log out user")
         localStorage.removeItem('currentUser');
+        this.route.navigate(['../login']);
     }
 }

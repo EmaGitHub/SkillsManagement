@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { Lang } from 'src/app/shared/domain/enums/lang';
 import { TranslateService } from '@ngx-translate/core';
 import { DateAdapter } from '@angular/material/core';
@@ -10,7 +10,7 @@ import { Subject } from 'rxjs';
 })
 export class LanguageService {
 
-    private languageChangeSubject$: Subject<any> = new Subject<any>();
+    private languageChangeSubject$: BehaviorSubject<any> = new BehaviorSubject<any>(Lang.EN);
 
     constructor(private translate: TranslateService, private dateAdapter: DateAdapter<any>) { }
 

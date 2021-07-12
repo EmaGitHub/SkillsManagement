@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { AuthenticationService } from 'src/app/core/services/AuthenticationService';
 import { UserService } from 'src/app/core/services/utils/user.service';
-import { UtilService } from 'src/app/core/services/utils/util.service';
 import { User } from 'src/app/pages/account/models/User';
 
 @Component({
@@ -12,15 +12,20 @@ import { User } from 'src/app/pages/account/models/User';
 export class LoggedUserComponent implements OnInit, OnDestroy {
 
   public dropdownVisible = false;
-
   public user: User;
 
   private userLoggedSubscription: Subscription;
 
-  constructor(private userService: UserService, private utilService: UtilService) { }
+  constructor(private userService: UserService, private authService: AuthenticationService) { }
 
   ngOnInit(): void {
-    this.user = this.userService.getUser();
+    this.userLoggedSubscription = this.userService.getCurrentUserAsObservable().subscribe(
+      (user: User) => {
+          this.user = user;
+      },
+      (err: any) => {
+        console.log("Error access to user ",err)
+      });
   }
 
   public clickOutsideHandler() {
@@ -32,7 +37,7 @@ export class LoggedUserComponent implements OnInit, OnDestroy {
   }
 
   public logout(event: any) {
-    this.utilService.logout();
+    this.authService.logout();
   }
 
   ngOnDestroy(): void {

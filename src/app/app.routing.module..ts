@@ -3,14 +3,24 @@ import { NgModule } from '@angular/core';
 import { BaseComponent } from './pages/base/base.component';
 import { WelcomeComponent } from './pages/account/welcome/welcome.component';
 import { HomeComponent } from './pages/home/home.component';
+import { LoginComponent } from './pages/account/login/login.component';
 
 const routes: Routes = [
     {
         path: '',
         component: WelcomeComponent,
+        children: [
+            {
+                path: '',
+                children: [
+                    { path: '', redirectTo: 'login', pathMatch: 'full' },
+                    { path: 'login', component: LoginComponent }
+                ]
+            }
+        ]
     },
     {
-        path: '',
+        path: 'skills',
         component: BaseComponent,
         children: [
             {

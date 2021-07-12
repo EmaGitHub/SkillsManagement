@@ -10,14 +10,13 @@
                     <div class="dropdown-header-inner">{{ 'label.user' | translate }}</div>
                 </div>
                 <div class="user-info-box">
-                    <div class="identification-number app-dropdown-item">
-                        <div ><i class="fa fa-key mr1"></i></div>
-                        <div >{{ user.userId }}</div>
-                    </div>
                     <div class="name app-dropdown-item">
                         <div ><i class="fa fa-user mr1"></i></div>
-                        <div class="first">{{ user.firstName }}</div>
-                        <div class="last">{{ user.lastName }}</div>
+                        <div class="first">&ensp;{{ user.username }}</div>
+                    </div>
+                    <div class="identification-number app-dropdown-item">
+                        <div ><i class="fa fa-key mr1"></i></div>
+                        <div >&ensp;{{ user.token | slice:0:6 }}...</div>
                     </div>
                     <div class="society app-dropdown-item">
                         <div ><i class="fa fa-company mr1"></i></div>

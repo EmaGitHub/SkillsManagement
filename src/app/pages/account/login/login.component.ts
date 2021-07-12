@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { AuthenticationService } from 'src/app/core/services/AuthenticationService';
 import { DialogService } from 'src/app/core/services/DialogService';
-import { LanguageService } from 'src/app/core/services/general-config/language.service';
 import { SpinnerService } from 'src/app/core/services/SpinnerService';
 import { JwtResponse } from 'src/app/shared/domain/auth/jwt-response';
 
@@ -35,7 +34,7 @@ export class LoginComponent implements OnInit {
           this.dialogService.showTimedAlert(this.translateService.instant('message.success.loginSucceeded'), 500);
         }, 0);
         console.log("Login succeeded "+JSON.stringify(resp));
-        this.router.navigate(['./home']);
+        this.router.navigate(['./skills/home']);
       },
       (err: JwtResponse) => {
         this.spinnerService.stop();

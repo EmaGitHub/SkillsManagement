@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Subject, Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { EnvironmentService } from '../general-config/environment.service';
 import { LeftMenuLink } from 'src/app/shared/domain/components/left-menu-link';
 import { Lang } from 'src/app/shared/domain/enums/lang';
 
@@ -14,7 +13,7 @@ export class LeftMenuService {
 
     private _navigableMenuItemClickSubject$: Subject<LeftMenuLink> = new Subject<LeftMenuLink>();
 
-    constructor(private environmentService: EnvironmentService, private httpClient: HttpClient) { }
+    constructor(private httpClient: HttpClient) { }
     
     get menuItemClickSubjectAsObservable(): Observable<LeftMenuLink> {
         return this._menuItemClickSubject$.asObservable();
