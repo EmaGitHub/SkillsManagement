@@ -1,28 +1,16 @@
 :host {
     
-    .form {
-        margin: 20px 10px;
-        text-align: center;
+    .login-form {
+        margin: 10px 10px;
 
-        .register-form {
-            padding-top: 10px;
+        .login-field {
+            padding: 4px 10px 0px 10px;
+            margin: 10px 0px;
+            background-color: white;
             border-radius: 8px;
             border: 1px solid gray;
-            width: 300px;
-            background-color: white;
-            margin-left: auto;
-            margin-right: auto;
-            margin-bottom: 10px;
-
-            .register-field {
-                height: 56px;
-            }
-
-            .adminCheckbox {
-                padding-left: 20px;
-                margin-bottom: 15px;
-                margin-top: 10px;
-            }
+            width: 250px;
+            height: 60px;
         }
 
         .buttons {
@@ -31,10 +19,9 @@
 
             .icon-button {
                 display: inline-grid;
-                width: 100px;
                 height: 35px;
                 margin: 16px !important;
-                padding: 5px 0;
+                padding: 5px 15px;
                 font-size: 16px;
                 border: 1px solid #c3ced4;
                 border-radius: 7px;

@@ -8,7 +8,7 @@
         "lastName": "Cognome",
         "access": "Accedi",
         "exit": "Esci",
-        "register": "Registrati",
+        "register": "Registrazione",
         "registerLabel": "Non hai un'account? Registrati",
         "loginLabel": "Vai al tab di login"
     },
@@ -30,8 +30,8 @@
         "success": {
             "userCreated": "Utente creato",
             "loginSucceeded": "Login avvenuto con successo",
-            "loadSucceded": "Caricamento avvenuto con successo",
-            "logoutSucceded": "Disconnessione avvenuta con successo"
+            "loadSucceeded": "Caricamento avvenuto con successo",
+            "logoutSucceeded": "Disconnessione avvenuta con successo"
         },
         "warn": {
             "noDataFound": "Nessun dato trovato"

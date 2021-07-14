@@ -58,7 +58,7 @@
         "isNavigable": true,
         "level": 2,
         "roles": [1,2],
-        "url": "/skills/home"
+        "url": "/skills/edit"
       },
       {
         "id": "skillsList",
@@ -66,7 +66,7 @@
         "isNavigable": true,
         "level": 2,
         "roles": [1,2],
-        "url": "/skills/home"
+        "url": "/skills/list"
       }
     ]
   },
@@ -85,6 +85,7 @@
         "isNavigable": false,
         "level": 2,
         "roles": [1],
+        "icon": "adjust",
         "children": [
           {
             "id": "test2",

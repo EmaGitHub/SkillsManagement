@@ -28,9 +28,9 @@
     "message": {
         "success": {
             "userCreated": "User created successfully",
-            "loginSucceded": "Login succeeded",
-            "loadSuccessed": "Load successed",
-            "logoutSuccessed": "Logout successed"
+            "loginSucceeded": "Login succeeded",
+            "loadSuccedeed": "Load succeeded",
+            "logoutSucceeded": "Logout succeeded"
         },
         "warn": {
             "noDataFound": "No data found"

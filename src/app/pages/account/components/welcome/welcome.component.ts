@@ -1,10 +1,10 @@
 import { Subscription } from 'rxjs';
-import { SideMenuService } from '../../../core/services/utils/side-menu.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { UserService } from 'src/app/core/services/utils/user.service';
 import { MatButtonToggleChange } from '@angular/material/button-toggle';
 import { LanguageService } from 'src/app/core/services/general-config/language.service';
 import { Lang } from 'src/app/shared/domain/enums/lang';
+import { SideMenuService } from 'src/app/core/services/utils/side-menu.service';
 
 @Component({
   selector: 'app-welcome',

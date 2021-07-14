@@ -1,9 +1,11 @@
 import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { BaseComponent } from './pages/base/base.component';
-import { WelcomeComponent } from './pages/account/welcome/welcome.component';
 import { HomeComponent } from './pages/home/home.component';
-import { LoginComponent } from './pages/account/login/login.component';
+import { LoginComponent } from './pages/account/components/login/login.component';
+import { WelcomeComponent } from './pages/account/components/welcome/welcome.component';
+import { SkillListComponent } from './pages/skills/components/skill-list/skill-list.component';
+import { EditSkillsComponent } from './pages/skills/components/edit-skills/edit-skills.component';
 
 const routes: Routes = [
     {
@@ -27,7 +29,9 @@ const routes: Routes = [
                 path: '',
                 children: [
                     { path: '', redirectTo: 'home', pathMatch: 'full' },
-                    { path: 'home', component: HomeComponent }
+                    { path: 'home', component: HomeComponent },
+                    { path: 'edit', component: EditSkillsComponent },
+                    { path: 'list', component: SkillListComponent }
                 ]
             }
         ]

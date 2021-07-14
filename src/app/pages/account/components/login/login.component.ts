@@ -4,7 +4,9 @@ import { TranslateService } from '@ngx-translate/core';
 import { AuthenticationService } from 'src/app/core/services/AuthenticationService';
 import { DialogService } from 'src/app/core/services/DialogService';
 import { SpinnerService } from 'src/app/core/services/SpinnerService';
+import { UserService } from 'src/app/core/services/utils/user.service';
 import { JwtResponse } from 'src/app/shared/domain/auth/jwt-response';
+import { User } from '../../models/User';
 
 @Component({
   selector: 'app-login',
@@ -20,7 +22,7 @@ export class LoginComponent implements OnInit {
   selectedTabIndex: EventEmitter<number> = new EventEmitter<number>();
 
   constructor(private router: Router, private spinnerService: SpinnerService, private translateService: TranslateService,
-              private authService: AuthenticationService, private dialogService: DialogService) { }
+              private authService: AuthenticationService, private dialogService: DialogService, private userService: UserService) { }
 
   ngOnInit(): void {
   }
@@ -31,9 +33,17 @@ export class LoginComponent implements OnInit {
       (resp: JwtResponse) => {
         this.spinnerService.stop();
         setTimeout(() => {
-          this.dialogService.showTimedAlert(this.translateService.instant('message.success.loginSucceeded'), 400);
+          this.dialogService.showTimedAlert(this.translateService.instant('message.success.loginSucceeded'), 900);
         }, 0);
         console.log("Login succeeded "+JSON.stringify(resp));
+        if (resp && resp.token) {
+          // store user details and jwt token in local storage to keep user logged in between page refreshes
+          localStorage.setItem('currentUser', JSON.stringify(resp));
+          const user = {} as User;
+          user.username = resp.username;
+          user.token = resp.token;
+          this.userService.getUserSubject().next(user);
+      }
         this.router.navigate(['./skills/home']);
       },
       (err: JwtResponse) => {

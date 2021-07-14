@@ -18,6 +18,7 @@ import { JwtInterceptor } from './core/http-utils/HttpInterceptor';
 import { ErrorInterceptor } from './core/http-utils/ErrorInterceptor';
 import { AccountModule } from './pages/account/account.module';
 import { HomeComponent } from './pages/home/home.component';
+import { SkillsModule } from './pages/skills/skills.module';
 
 // ngx-translate - required for AOT compilation
 export function HttpLoaderFactory(http: HttpClient) {
@@ -42,6 +43,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     SharedModule,
     // **UTENTI
     AccountModule,
+    // **COMPETENZE
+    SkillsModule,
     // *ngx-translate
     TranslateModule.forRoot({
       loader: {

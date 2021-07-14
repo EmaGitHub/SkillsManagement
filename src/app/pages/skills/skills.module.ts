@@ -1,19 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LoginComponent } from './components/login/login.component';
 import { HttpLoaderFactory, SharedModule } from 'src/app/shared/shared.module';
 import { HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
-import { RegisterComponent } from './components/register/register.component';
-import { WelcomeComponent } from './components/welcome/welcome.component';
+import { SkillListComponent } from './components/skill-list/skill-list.component';
+import { EditSkillsComponent } from './components/edit-skills/edit-skills.component';
 
 @NgModule({
   declarations: [
-        // *pages
-        WelcomeComponent,
-        LoginComponent,
-        RegisterComponent  
-  ],
+    // *pages
+    SkillListComponent,
+    EditSkillsComponent
+],
   imports: [
     CommonModule,
     SharedModule,
@@ -28,4 +26,4 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
     
   ]
 })
-export class AccountModule { }
+export class SkillsModule { }

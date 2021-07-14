@@ -20,7 +20,7 @@ export class AuthenticationService {
             'password': password
            };
         return this.http.post<any>("public/authenticate", body)
-            .pipe(
+            /* .pipe(
                 map(
                     (resp: JwtResponse) => {
                         // login successful if there's a jwt token in the response
@@ -39,7 +39,7 @@ export class AuthenticationService {
                         return err;
                 })
             )
-        )
+        ) */
     }
 
     register(firstName: string, lastName: string, username: string, password: string, systemAdmin: boolean) {
