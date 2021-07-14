@@ -4,7 +4,5 @@ export class Message {
 	type?: string;
 	description: string;
 	severity?: string;
-	fieldName?: string;
-    sources?: any[];
-    
+	fieldName?: string;    
 }

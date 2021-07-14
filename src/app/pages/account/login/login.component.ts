@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
       (resp: JwtResponse) => {
         this.spinnerService.stop();
         setTimeout(() => {
-          this.dialogService.showTimedAlert(this.translateService.instant('message.success.loginSucceeded'), 500);
+          this.dialogService.showTimedAlert(this.translateService.instant('message.success.loginSucceeded'), 400);
         }, 0);
         console.log("Login succeeded "+JSON.stringify(resp));
         this.router.navigate(['./skills/home']);

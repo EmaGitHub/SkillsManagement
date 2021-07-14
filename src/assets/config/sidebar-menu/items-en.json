@@ -1,39 +1,23 @@
 [
   {
-    "id": "skills",
-    "label": "menu.skills",
+    "id": "search",
+    "label": "menu.search",
     "isNavigable": false,
     "level": 1,
     "roles": [1,2],
-    "icon": "modx",
+    "icon": "search",
     "children": [
       {
-        "id": "createFileGroup",
-        "label": "Crea portafoglio",
+        "id": "globalSearch",
+        "label": "menu.globalSearch",
         "isNavigable": true,
         "level": 2,
         "roles": [1,2],
         "url": "/skills/home"
       },
       {
-        "id": "showFileGroups",
-        "label": "Vis./mod. portafoglio",
-        "isNavigable": true,
-        "level": 2,
-        "roles": [1,2],
-        "url": "/skills/home"
-      },
-      {
-        "id": "manageFiles",
-        "label": "Gestisci pratiche",
-        "isNavigable": true,
-        "level": 2,
-        "roles": [1,2],
-        "url": "/skills/home"
-      },
-      {
-        "id": "associateFileGroup",
-        "label": "Associa portafoglio",
+        "id": "profileSearch",
+        "label": "menu.profileSearch",
         "isNavigable": true,
         "level": 2,
         "roles": [1,2],
@@ -51,46 +35,77 @@
     "icon": "users",
     "children": [
       {
-        "id": "createMirrorUser",
-        "label": "Crea esterno",
+        "id": "usersList",
+        "label": "menu.usersList",
         "isNavigable": true,
         "level": 2,
         "roles": [1],
         "url": "/skills/home"
-      },
+      }
+    ]
+  },
+  {
+    "id": "skills",
+    "label": "menu.skills",
+    "isNavigable": false,
+    "level": 1,
+    "roles": [1,2],
+    "icon": "modx",
+    "children": [
       {
-        "id": "editMirrorUser",
-        "label": "Modifica esterno",
+        "id": "createSkill",
+        "label": "menu.createSkill",
         "isNavigable": true,
         "level": 2,
-        "roles": [1],
+        "roles": [1,2],
         "url": "/skills/home"
       },
       {
-        "id": "searchMirrorUser",
-        "label": "Ricerca esterno",
+        "id": "skillsList",
+        "label": "menu.skillsList",
         "isNavigable": true,
         "level": 2,
-        "roles": [1],
+        "roles": [1,2],
         "url": "/skills/home"
-      },
+      }
+    ]
+  },
+  {
+    "id": "test",
+    "label": "test",
+    "isNavigable": false,
+    "level": 1,
+    "roles": [1],
+    "url": "/skills/home",
+    "icon": "adjust",
+    "children": [
       {
-        "id": "test",
+        "id": "test1",
         "label": "Test refresh",
         "isNavigable": false,
         "level": 2,
         "roles": [1],
         "children": [
           {
-            "id": "testChild",
+            "id": "test2",
             "label": "Test refresh child",
             "isNavigable": true,
             "level": 3,
             "roles": [1],
+            "icon": "adjust",
             "url": "/skills/home"
           }
         ]
       }
     ]
+  },
+  {
+    "id": "activityLog",
+    "label": "Activity Log",
+    "isNavigable": true,
+    "level": 1,
+    "roles": [1],
+    "url": "/skills/home",
+    "icon": "toc"
   }
 ]

@@ -37,7 +37,7 @@ export class DialogService {
           }).then((result) => {
             /* Read more about handling dismissals below */
             if (result.dismiss === swal.DismissReason.timer) {
-              console.log('Closed by the timer')
+              //console.log('Closed')
             }
           })
     }

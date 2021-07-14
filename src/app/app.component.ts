@@ -5,6 +5,7 @@ import { Lang } from './shared/domain/enums/lang';
 import { ModalComponent } from './shared/components/modal/modal.component';
 import { Subscription } from 'rxjs';
 import { SideMenuService } from './core/services/utils/side-menu.service';
+import { LanguageService } from './core/services/general-config/language.service';
 
 @Component({
   selector: 'app-root',
@@ -18,16 +19,18 @@ export class AppComponent implements OnInit {
   @ViewChild('logoutModal') logoutModal: ModalComponent;
 
   private refreshSubscription: Subscription;
-  private userSubscription: Subscription;
+  private languageSubscription: Subscription;
 
   public logoutSuccessed: boolean;
 
   constructor(private translate: TranslateService,
     private router: Router,
-    private sideMenuService: SideMenuService) {
+    private sideMenuService: SideMenuService,
+    private languageService: LanguageService) {
     this.initTranslateDate();
     this.initDefaultLanguage();
     this.initRefreshSubscription();
+    this.initLanguageSubscription();
   }
 
   ngOnInit() {  }
@@ -43,7 +46,7 @@ export class AppComponent implements OnInit {
 
     this.translate.setDefaultLang(defaultLang);
     this.translate.use(defaultLang);
-    //this.languageService.nextLanguageChange(defaultLang);
+    this.languageService.nextLanguageChange(defaultLang);
   }
 
   private initRefreshSubscription() {
@@ -58,6 +61,15 @@ export class AppComponent implements OnInit {
     });
   }
 
+  private initLanguageSubscription() {
+    this.languageSubscription = this.languageService.languageChangeAsObservable.subscribe(
+      (data: any) => {
+        let lastSidemenuLinkSelected = this.sideMenuService.getSidemenuLinkId();
+        this.sideMenuService.pageChoose(lastSidemenuLinkSelected);
+      }
+    )
+  }
+
   private initTranslateDate() {
     this.translate.addLangs([Lang.IT, Lang.EN]);
     this.translate.setDefaultLang(Lang.IT);
@@ -68,8 +80,8 @@ export class AppComponent implements OnInit {
     if (this.refreshSubscription) {
       this.refreshSubscription.unsubscribe();
     }
-    if (this.userSubscription) {
-      this.userSubscription.unsubscribe();
+    if (this.languageSubscription) {
+      this.languageSubscription.unsubscribe();
     }
   }
 }

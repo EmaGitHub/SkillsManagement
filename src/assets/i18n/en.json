@@ -13,8 +13,14 @@
         "loginLabel": "Go to login tab"
     },
     "menu": {
+        "search": "Search",
+        "globalSearch": "Global search",
+        "profileSearch": "Profile search",
         "skills": "Skills",
-        "users": "Users"
+        "createSkill": "Create skill",
+        "skillsList": "Skills list",
+        "users": "Users",
+        "usersList": "Users list"
     },
     "action": {
         "filter": "Filter"

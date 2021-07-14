@@ -13,8 +13,14 @@
         "loginLabel": "Vai al tab di login"
     },
     "menu": {
+        "search": "Ricerca",
+        "globalSearch": "Ricerca globale",
+        "profileSearch": "Ricerca profilo",
         "skills": "Competenze",
-        "users": "Utenti"
+        "createSkill": "Crea competenza",
+        "skillsList": "Lista competenze",
+        "users": "Utenti",
+        "usersList": "Lista utenti"
     },
     "action": {
         "filter": "Filtra",

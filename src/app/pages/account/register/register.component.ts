@@ -42,7 +42,7 @@ export class RegisterComponent implements OnInit {
         else {                                       // if user creation is OK
           this.selectedTabIndex.emit(0);
           setTimeout(() => {
-            this.dialogService.showTimedAlert(this.translateService.instant('message.success.userCreated'), 500);
+            this.dialogService.showTimedAlert(this.translateService.instant('message.success.userCreated'), 400);
           }, 0);
         }
       },
