@@ -10,7 +10,9 @@
         "exit": "Exit",
         "register": "Register",
         "registerLabel": "Do not have any account? Sign-up",
-        "loginLabel": "Go to login tab"
+        "loginLabel": "Go to login tab",
+        "skillName": "Skill name",
+        "create": "Create"
     },
     "menu": {
         "search": "Search",
@@ -33,7 +35,8 @@
             "logoutSucceeded": "Logout succeeded"
         },
         "warn": {
-            "noDataFound": "No data found"
+            "noDataFound": "No data found",
+            "sessionExpired": "Session expired"
         },
         "error": {
             "error": "Error",

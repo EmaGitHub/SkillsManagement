@@ -155,6 +155,7 @@ scroll {
   .dropdown-content {
     display: none;
     position: absolute;
+    min-width: 130px;
     z-index: 134;
     right: 0;
     padding: 0;

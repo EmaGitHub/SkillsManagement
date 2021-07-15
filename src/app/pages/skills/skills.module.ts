@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { SkillListComponent } from './components/skill-list/skill-list.component';
 import { EditSkillsComponent } from './components/edit-skills/edit-skills.component';
+import { SkillsService } from './services/skills.service';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,9 @@ import { EditSkillsComponent } from './components/edit-skills/edit-skills.compon
         deps: [HttpClient]
       }
     })
-    
+  ],
+  providers: [
+      SkillsService
   ]
 })
 export class SkillsModule { }

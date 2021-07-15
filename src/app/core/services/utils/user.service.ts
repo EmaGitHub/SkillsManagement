@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { User } from 'src/app/pages/account/models/User';
-import { JwtResponse } from 'src/app/shared/domain/auth/jwt-response';
 
 @Injectable()
 export class UserService {
@@ -23,12 +22,17 @@ export class UserService {
         else {
             this.currentUserSubject = new Subject<User>();
             this.currentUser = this.currentUserSubject.asObservable();
-            return this.currentUserSubject;
+            return this.currentUser;
         }
     }
 
     public getUserSubject(): Subject<User> {
-        return this.currentUserSubject;
+        if (this.currentUserSubject)
+            return this.currentUserSubject;
+        else {
+            this.currentUserSubject = new Subject<User>();
+            return this.currentUserSubject;
+        }
     }
 
     public saveUserDataInLocalStorage(user: User) {

@@ -1,9 +1,9 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-import { AuthenticationService } from 'src/app/core/services/AuthenticationService';
-import { DialogService } from 'src/app/core/services/DialogService';
-import { SpinnerService } from 'src/app/core/services/SpinnerService';
+import { AuthenticationService } from 'src/app/core/services/utils/AuthenticationService';
+import { DialogService } from 'src/app/core/services/utils/DialogService';
+import { SpinnerService } from 'src/app/core/services/utils/SpinnerService';
 import { UserService } from 'src/app/core/services/utils/user.service';
 import { JwtResponse } from 'src/app/shared/domain/auth/jwt-response';
 import { User } from '../../models/User';

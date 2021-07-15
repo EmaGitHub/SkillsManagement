@@ -10,7 +10,9 @@
         "exit": "Esci",
         "register": "Registrazione",
         "registerLabel": "Non hai un'account? Registrati",
-        "loginLabel": "Vai al tab di login"
+        "loginLabel": "Vai al tab di login",
+        "skillName": "Nome competenza",
+        "create": "Crea"
     },
     "menu": {
         "search": "Ricerca",
@@ -34,7 +36,8 @@
             "logoutSucceeded": "Disconnessione avvenuta con successo"
         },
         "warn": {
-            "noDataFound": "Nessun dato trovato"
+            "noDataFound": "Nessun dato trovato",
+            "sessionExpired": "Sessione scaduta"
         },
         "error": {
             "error": "Errore",

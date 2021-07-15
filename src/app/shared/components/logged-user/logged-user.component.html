@@ -18,10 +18,6 @@
                         <div ><i class="fa fa-key mr1"></i></div>
                         <div >&ensp;{{ user.token | slice:0:6 }}...</div>
                     </div>
-                    <div class="society app-dropdown-item">
-                        <div ><i class="fa fa-company mr1"></i></div>
-                        <div > - </div>
-                    </div>
                     <div class="logout app-dropdown-item">
                         <button class="logout-button btn btn-primary btn-sm" (click)="logout($event)">
                             <span><i class="button-icon-inside fa fa-sign-out"></i> {{'label.exit' | translate}}</span>

@@ -1,10 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { catchError, map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
-import { UserService } from './utils/user.service';
-import { User } from 'src/app/pages/account/models/User';
-import { JwtResponse } from 'src/app/shared/domain/auth/jwt-response';
+import { UserService } from './user.service';
 import { Router } from '@angular/router';
 
 @Injectable({ providedIn: 'root' })

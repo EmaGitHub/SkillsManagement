@@ -1,1 +1,23 @@
-<p>edit-skills works!</p>
+<mat-card class="fadeIn">
+    <div class="skill-form">
+        <div class="row">
+            <mat-form-field class="skill-field col-5">
+                <input matInput placeholder="{{'label.skillName' | translate}}" [(ngModel)]="skill" name="skill" (keyup.enter)="addSkill()">
+            </mat-form-field>
+
+            <div class="col-5">
+                <mat-form-field>
+                    <mat-select [(ngModel)]="selectedValue" name="food" class="area-select-field">
+                        <mat-option *ngFor="let food of foods" [value]="food.value">
+                            {{food.viewValue}}
+                        </mat-option>
+                        </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+    
+        <button mat-button class="create-button" (click)="addSkill()">
+            <span>{{'label.create' | translate}}</span>
+        </button>
+    </div>
+</mat-card>

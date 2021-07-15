@@ -1,0 +1,27 @@
+:host {
+    .skill-form {
+        margin: 10px 10px;
+
+        .skill-field {
+            padding: 4px 10px 0px 10px;
+            margin: 10px 0px;
+            background-color: white;
+            border-radius: 8px;
+            border: 1px solid gray;
+            width: 250px;
+            height: 60px;
+        }
+        .area-select-field {
+            border-radius: 8px;
+            border: 1px solid gray;
+        }
+        .create-button {
+            border: 1px solid gray;
+            border-radius: 8px;
+        }
+    }
+
+    ::ng-deep #cdk-overlay-0 {
+        z-index: 1001;
+    }
+}
