@@ -11,16 +11,21 @@
         "register": "Register",
         "registerLabel": "Do not have any account? Sign-up",
         "loginLabel": "Go to login tab",
-        "skillName": "Skill name",
+        "createSkillTitle": "Create new competence",
+        "skillName": "New competence name",
+        "noArea": "No competence area",
+        "selectSkillArea": "Select competence area",
+        "newSkillArea": "New competence area",
+        "newSkillAreaName": "New competence area name",
         "create": "Create"
     },
     "menu": {
         "search": "Search",
         "globalSearch": "Global search",
         "profileSearch": "Profile search",
-        "skills": "Skills",
-        "createSkill": "Create skill",
-        "skillsList": "Skills list",
+        "skills": "Competences",
+        "createSkill": "Create competence",
+        "skillsList": "Competences list",
         "users": "Users",
         "usersList": "Users list"
     },
@@ -32,7 +37,8 @@
             "userCreated": "User created successfully",
             "loginSucceeded": "Login succeeded",
             "loadSuccedeed": "Load succeeded",
-            "logoutSucceeded": "Logout succeeded"
+            "logoutSucceeded": "Logout succeeded",
+            "competenceCreated": "Competence created"
         },
         "warn": {
             "noDataFound": "No data found",
@@ -44,7 +50,9 @@
             "genericError": "Something goes wrong",
             "loginFailed": "Login failed",
             "dataInconsistencyError": "Data inconsistency error",
-            "logoutFailed": "Logout failed"
+            "logoutFailed": "Logout failed",
+            "usernameAlreadyPresent": "Username already present",
+            "skillOrAreaAlreadyPresent": "Competence or area already present"
         },
         "tooltip": {
         }

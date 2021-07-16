@@ -8,20 +8,28 @@
             background-color: white;
             border-radius: 8px;
             border: 1px solid gray;
-            width: 250px;
             height: 60px;
+            width: inherit;
+
+            .area-select-field {
+                padding: 5px 5px;
+            }
         }
-        .area-select-field {
-            border-radius: 8px;
-            border: 1px solid gray;
-        }
+        
         .create-button {
             border: 1px solid gray;
             border-radius: 8px;
+            margin: 10px 0;
         }
     }
 
     ::ng-deep #cdk-overlay-0 {
         z-index: 1001;
     }
+
+    ::ng-deep .mat-select {
+        display: inline;
+    }
+
+
 }

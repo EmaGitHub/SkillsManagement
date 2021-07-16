@@ -1,23 +1,38 @@
 <mat-card class="fadeIn">
-    <div class="skill-form">
-        <div class="row">
-            <mat-form-field class="skill-field col-5">
-                <input matInput placeholder="{{'label.skillName' | translate}}" [(ngModel)]="skill" name="skill" (keyup.enter)="addSkill()">
-            </mat-form-field>
+    <mat-card-header>
+        <mat-card-title>
+            {{'label.createSkillTitle' | translate}}
+        </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <form class="skill-form" (ngSubmit)="addCompetence()" [formGroup]="newSkillForm">
+            <div class="row">
+                <div [ngClass]="newSkillAreaVisible ? ' col-md-4' : ' col-md-6'">
+                    <mat-form-field class="skill-field">
+                        <input matInput placeholder="{{'label.skillName' | translate}}" [(ngModel)]="data.competence" formControlName="skill" (keyup.enter)="addCompetence()">
+                    </mat-form-field>
+                </div>
 
-            <div class="col-5">
-                <mat-form-field>
-                    <mat-select [(ngModel)]="selectedValue" name="food" class="area-select-field">
-                        <mat-option *ngFor="let food of foods" [value]="food.value">
-                            {{food.viewValue}}
-                        </mat-option>
-                        </mat-select>
-                </mat-form-field>
+                <div [ngClass]="newSkillAreaVisible ? ' col-md-4' : ' col-md-6'">
+                    <mat-form-field class="skill-field">
+                        <mat-select [(ngModel)]="data.areaId" formControlName="skillArea" class="area-select-field" [placeholder]="'label.selectSkillArea' | translate">
+                            <mat-option *ngFor="let area of skillAreas" [value]="area.key">
+                                {{area.value | translate}}
+                            </mat-option>
+                            </mat-select>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-md-4">
+                    <mat-form-field class="skill-field" *ngIf="newSkillAreaVisible">
+                        <input matInput placeholder="{{'label.newSkillAreaName' | translate}}" [(ngModel)]="data.newCompetenceArea" formControlName="newSkillArea" (keyup.enter)="addCompetence()">
+                    </mat-form-field>
+                </div>
             </div>
-        </div>
-    
-        <button mat-button class="create-button" (click)="addSkill()">
-            <span>{{'label.create' | translate}}</span>
-        </button>
-    </div>
+        
+            <button mat-button class="create-button" type="submit">
+                <span>{{'label.create' | translate}}</span>
+            </button>
+        </form>
+    </mat-card-content>
 </mat-card>

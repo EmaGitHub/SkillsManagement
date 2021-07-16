@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { LanguageService } from 'src/app/core/services/general-config/language.service';
+import { Subscription } from 'rxjs';
 import { DialogService } from 'src/app/core/services/utils/DialogService';
 import { SpinnerService } from 'src/app/core/services/utils/SpinnerService';
+import { SkillArea } from '../../models/skill-area.model';
+import { Skill } from '../../models/skill.model';
 import { SkillsService } from '../../services/skills.service';
 
 @Component({
@@ -12,24 +14,55 @@ import { SkillsService } from '../../services/skills.service';
 })
 export class SkillListComponent implements OnInit {
 
-  skills: any[];
+  apiResponse: number = 0;
+  skills: Skill[];
+  skillAreas: SkillArea[];
+
+  skillsSubscription: Subscription;
+  skillAreasSubscription: Subscription;
 
   constructor(private skillsService: SkillsService, private spinnerService: SpinnerService, private dialogService: DialogService, private translateService: TranslateService) { }
 
   ngOnInit(): void {
     this.spinnerService.start();
-    this.skillsService.getSkills().subscribe(
+    this.skillsSubscription = this.skillsService.getSkills().subscribe(
       (resp: any) => {
-        console.log("Received response "+JSON.stringify(resp));
+        console.log("Received Skills "+JSON.stringify(resp));
+        this.apiResponse += 1;
         this.skills = resp;
-        this.spinnerService.stop();
+        if (this.apiResponse == 2)
+          this.spinnerService.stop();
       },
       (err: any) => {
         console.log("Error "+JSON.stringify(err))
         this.spinnerService.stop();
-        this.dialogService.showTimedAlert(this.translateService.instant('message.error.genericError'), 1500);
+        if (err.status != 401)
+          this.dialogService.showTimedAlert(this.translateService.instant('message.error.genericError'), 1500);
       }
-    )
+    );
+
+    this.skillAreasSubscription = this.skillsService.getSkillAreas().subscribe(
+      (resp: any) => {
+        console.log("Received SkillAreas "+JSON.stringify(resp));
+        this.apiResponse += 1;
+        this.skillAreas = resp;
+        if (this.apiResponse == 2)
+          this.spinnerService.stop();
+      },
+      (err: any) => {
+        console.log("Error "+JSON.stringify(err))
+        this.spinnerService.stop();
+        if (err.status != 401)
+          this.dialogService.showTimedAlert(this.translateService.instant('message.error.genericError'), 1500);
+      }
+    );
+  }
+
+  ngOnDestroy() {
+    if (this.skillsSubscription)
+      this.skillsSubscription.unsubscribe();
+    if (this.skillAreasSubscription)
+      this.skillAreasSubscription.unsubscribe();
   }
 
 }

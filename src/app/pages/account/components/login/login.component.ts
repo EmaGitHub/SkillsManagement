@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
+import { Subscription } from 'rxjs';
 import { AuthenticationService } from 'src/app/core/services/utils/AuthenticationService';
 import { DialogService } from 'src/app/core/services/utils/DialogService';
 import { SpinnerService } from 'src/app/core/services/utils/SpinnerService';
@@ -21,6 +22,8 @@ export class LoginComponent implements OnInit {
   @Output('selectedTabIndex') 
   selectedTabIndex: EventEmitter<number> = new EventEmitter<number>();
 
+  loginSubscription: Subscription;
+
   constructor(private router: Router, private spinnerService: SpinnerService, private translateService: TranslateService,
               private authService: AuthenticationService, private dialogService: DialogService, private userService: UserService) { }
 
@@ -29,7 +32,7 @@ export class LoginComponent implements OnInit {
   
   login() {
     this.spinnerService.start(""); 
-    this.authService.login(this.username, this.password).subscribe(
+    this.loginSubscription = this.authService.login(this.username, this.password).subscribe(
       (resp: JwtResponse) => {
         this.spinnerService.stop();
         setTimeout(() => {
@@ -63,6 +66,11 @@ export class LoginComponent implements OnInit {
 
   goRegister() {
     this.selectedTabIndex.emit(1);
+  }
+
+  ngOnDestroy() {
+    if (this.loginSubscription)
+      this.loginSubscription.unsubscribe();
   }
 
 }

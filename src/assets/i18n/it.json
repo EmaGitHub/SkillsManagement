@@ -11,7 +11,12 @@
         "register": "Registrazione",
         "registerLabel": "Non hai un'account? Registrati",
         "loginLabel": "Vai al tab di login",
-        "skillName": "Nome competenza",
+        "createSkillTitle": "Crea nuova competenza",
+        "skillName": "Nome nuova competenza",
+        "noArea": "Nessuna area di competenza",
+        "selectSkillArea": "Seleziona area di competenza",
+        "newSkillArea": "Nuova area di competenza",
+        "newSkillAreaName": "Nome nuova area di competenza",
         "create": "Crea"
     },
     "menu": {
@@ -33,7 +38,8 @@
             "userCreated": "Utente creato",
             "loginSucceeded": "Login avvenuto con successo",
             "loadSucceeded": "Caricamento avvenuto con successo",
-            "logoutSucceeded": "Disconnessione avvenuta con successo"
+            "logoutSucceeded": "Disconnessione avvenuta con successo",
+            "competenceCreated": "Competence created"
         },
         "warn": {
             "noDataFound": "Nessun dato trovato",
@@ -45,7 +51,9 @@
             "genericError": "Si e' verificato un errore",
             "loginFailed": "Login fallita",
             "dataInconsistencyError": "Errore di inconsistenza dati",
-            "logoutFailed": "Disconnessione fallita"
+            "logoutFailed": "Disconnessione fallita",
+            "usernameAlreadyPresent": "Username già utilizzato",
+            "skillOrAreaAlreadyPresent": "Competenza o area già presente"
         },
         "tooltip": {
         }

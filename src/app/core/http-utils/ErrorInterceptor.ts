@@ -15,7 +15,7 @@ export class ErrorInterceptor implements HttpInterceptor {
             if (err.status === 401) {
                 // auto logout if 401 response returned from api
                 console.log("UnAuthorized request")
-                this.dialogService.showTimedAlert(this.translateService.instant('message.error.wrongCredentials'), 1500);
+                this.dialogService.showTimedAlert(this.translateService.instant('message.warn.sessionExpired'), 1500);
                 setTimeout(() => {
                     this.authenticationService.logout();
                 }, 1500);
