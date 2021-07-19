@@ -68,16 +68,4 @@ body {
         }
     }
 
-    .modal-overlay {
-        z-index: 1040;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: #00000090;
-        -webkit-transition: background-color 2000ms linear;
-        -ms-transition: background-color 2000ms linear;
-        transition: background-color 2000ms linear;
-    }
 }

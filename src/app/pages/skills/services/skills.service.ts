@@ -9,7 +9,7 @@ export class SkillsService {
 
     constructor(private httpClient: HttpClient) {}
 
-    public getSkills(): Observable<Skill> {
+    public getSkills(): Observable<Skill[]> {
         return this.httpClient.get<any>("skill")
     }
 

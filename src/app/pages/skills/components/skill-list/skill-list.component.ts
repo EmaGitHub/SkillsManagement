@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { Subscription } from 'rxjs';
+import { forkJoin } from 'rxjs';
 import { DialogService } from 'src/app/core/services/utils/DialogService';
 import { SpinnerService } from 'src/app/core/services/utils/SpinnerService';
 import { SkillArea } from '../../models/skill-area.model';
@@ -18,51 +18,27 @@ export class SkillListComponent implements OnInit {
   skills: Skill[];
   skillAreas: SkillArea[];
 
-  skillsSubscription: Subscription;
-  skillAreasSubscription: Subscription;
-
   constructor(private skillsService: SkillsService, private spinnerService: SpinnerService, private dialogService: DialogService, private translateService: TranslateService) { }
 
   ngOnInit(): void {
     this.spinnerService.start();
-    this.skillsSubscription = this.skillsService.getSkills().subscribe(
-      (resp: any) => {
-        console.log("Received Skills "+JSON.stringify(resp));
-        this.apiResponse += 1;
-        this.skills = resp;
-        if (this.apiResponse == 2)
+    forkJoin([this.skillsService.getSkills(), this.skillsService.getSkillAreas()])
+      .subscribe(([skills, areas]: [Skill[], SkillArea[]]) => {
+          this.skills = skills;
+          this.skillAreas = areas
+          console.log("Response: Skills -> "+JSON.stringify(this.skills)+" Areas -> "+JSON.stringify(this.skillAreas));
           this.spinnerService.stop();
       },
-      (err: any) => {
-        console.log("Error "+JSON.stringify(err))
+      (error: any) => {
         this.spinnerService.stop();
-        if (err.status != 401)
-          this.dialogService.showTimedAlert(this.translateService.instant('message.error.genericError'), 1500);
-      }
-    );
-
-    this.skillAreasSubscription = this.skillsService.getSkillAreas().subscribe(
-      (resp: any) => {
-        console.log("Received SkillAreas "+JSON.stringify(resp));
-        this.apiResponse += 1;
-        this.skillAreas = resp;
-        if (this.apiResponse == 2)
-          this.spinnerService.stop();
-      },
-      (err: any) => {
-        console.log("Error "+JSON.stringify(err))
-        this.spinnerService.stop();
-        if (err.status != 401)
+        console.log("Error response: "+error);
+        if (error.status != 401)
           this.dialogService.showTimedAlert(this.translateService.instant('message.error.genericError'), 1500);
       }
     );
   }
 
   ngOnDestroy() {
-    if (this.skillsSubscription)
-      this.skillsSubscription.unsubscribe();
-    if (this.skillAreasSubscription)
-      this.skillAreasSubscription.unsubscribe();
   }
 
 }

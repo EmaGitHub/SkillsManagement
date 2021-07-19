@@ -53,7 +53,9 @@
             "dataInconsistencyError": "Errore di inconsistenza dati",
             "logoutFailed": "Disconnessione fallita",
             "usernameAlreadyPresent": "Username già utilizzato",
-            "skillOrAreaAlreadyPresent": "Competenza o area già presente"
+            "skillAlreadyPresent": "Competenza già presente",
+            "areaAlreadyPresent": "Area di competenza già presente"
+
         },
         "tooltip": {
         }

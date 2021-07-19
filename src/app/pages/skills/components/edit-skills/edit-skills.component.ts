@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
-import { concat, Observable, of, Subscription } from 'rxjs';
-import { catchError, concatMap, mergeMap, switchMap } from 'rxjs/operators';
+import { Subscription } from 'rxjs';
 import { DialogService } from 'src/app/core/services/utils/DialogService';
 import { SpinnerService } from 'src/app/core/services/utils/SpinnerService';
 import { SkillArea } from '../../models/skill-area.model';
@@ -98,101 +97,90 @@ export class EditSkillsComponent implements OnInit {
       (err: any) => {
         console.log("Error "+JSON.stringify(err))
         this.spinnerService.stop();
-        if (err.status != 401)
+        if (err.error.error && err.error.error === "DataIntegrityViolationException") {
+          setTimeout(() => {
+            this.dialogService.showTimedAlert(this.translateService.instant('message.error.areaAlreadyPresent'), 1500);
+          }, 0);
+        } else if (err.status != 401) {
           this.dialogService.showTimedAlert(this.translateService.instant('message.error.genericError'), 1500);
+        }
       }
     )
-  }
-  
-  /* addSkillArea(areaName: string) {
-    this.skillsService.addSkillArea(areaName).subscribe(
-      (resp: SkillArea) => {
-        console.log("New Skill Area added ", resp);
-        return resp;
-      },
-      (err: any) => {
-        console.log("Error while adding Skill Area");
-        this.spinnerService.stop();
-        if (err.error.error && err.error.error === "DataIntegrityViolationException") {
-          setTimeout(() => {
-            this.dialogService.showTimedAlert(this.translateService.instant('message.error.skillAreaAlreadyPresent'), 1500);
-          }, 0);
-        } else if (err.status != 401)
-          this.dialogService.showTimedAlert(this.translateService.instant('message.error.genericError'), 1500);
-      }
-    );
-  }
-
-  addSkill(skill: Skill) {
-    this.skillsService.addSkill(skill).subscribe(
-      (resp: any) => {
-        this.spinnerService.stop();
-        console.log("New Skill Area added ", resp);
-        this.dialogService.showTimedAlert(this.translateService.instant('message.success.competenceCreated'), 1000);
-        //this.newSkillForm.reset();
-      },
-      (err: any) => {
-        this.spinnerService.stop();
-        console.log("Error while adding Skill");
-        if (err.error.error && err.error.error === "DataIntegrityViolationException") {
-          setTimeout(() => {
-            this.dialogService.showTimedAlert(this.translateService.instant('message.error.skillAlreadyPresent'), 1500);
-          }, 0);
-        } else if (err.status != 401)
-          this.dialogService.showTimedAlert(this.translateService.instant('message.error.genericError'), 1500);
-      }
-    );
-  } */
-  
+  }  
 
   addCompetence() {
     if (this.newSkillForm.valid) {
+      // new Area check
       if (this.newSkillForm.get('skillArea').value == 0) {
       // skill with new Competence area
       this.spinnerService.start();
-      this.skillsService.addSkillArea(this.data.newCompetenceArea)
-      .pipe(
-        concatMap(
-          newSkillArea => this.skillsService.addSkill(
-            {
-              competence: this.data.competence,
-              areaId: newSkillArea.id,
-              newCompetenceArea: ''
+      this.skillsService.addSkillArea(this.data.newCompetenceArea).subscribe(
+        (newSkillArea: any) =>  {
+          let newSkill = {
+            competence: this.data.competence,
+            areaId: newSkillArea.id,
+            newCompetenceArea: ''
+          };
+          console.log("New skill Area created ",JSON.stringify(newSkillArea)+" NS "+newSkill);
+          this.skillsService.addSkill(newSkill).subscribe(
+            (data: any) => {
+              this.spinnerService.stop();
+              this.dialogService.showTimedAlert(this.translateService.instant('message.success.competenceCreated'), 1000);
+              this.retrieveSkillAreas();
+              console.log("Skill creation success "+JSON.stringify(data))  
+            },
+            (err: any) => {
+              this.spinnerService.stop();
+              console.log("Response error: "+JSON.stringify(err))
+              if (err.error.error && err.error.error === "DataIntegrityViolationException") {
+                setTimeout(() => {
+                  this.dialogService.showTimedAlert(this.translateService.instant('message.error.skillAlreadyPresent'), 1500);
+                }, 0);
+              } else if (err.status != 401)
+                this.dialogService.showTimedAlert(this.translateService.instant('message.error.genericError'), 1500);
             }
-          )
-        ),
-        //catchError(error => of(error))
-      ).subscribe(
-        success => { 
-          this.spinnerService.stop();
-          this.dialogService.showTimedAlert(this.translateService.instant('message.success.competenceCreated'), 1000);
-          this.retrieveSkillAreas();
-          console.log("SUCCESS "+JSON.stringify(success))  
+          ) 
         },
-        errorData => { 
+        (err: any) => {
           this.spinnerService.stop();
-          if (errorData.error.error && errorData.error.error === "DataIntegrityViolationException") {
+          console.log("Response error: "+JSON.stringify(err));
+          if (err.error.error && err.error.error === "DataIntegrityViolationException") {
             setTimeout(() => {
-              this.dialogService.showTimedAlert(this.translateService.instant('message.error.skillOrAreaAlreadyPresent'), 1500);
+              this.dialogService.showTimedAlert(this.translateService.instant('message.error.areaAlreadyPresent'), 1500);
             }, 0);
-          } else if (errorData.status != 401)
+          } else if (err.status != 401)
             this.dialogService.showTimedAlert(this.translateService.instant('message.error.genericError'), 1500);
-          console.log("ERR "+JSON.stringify(errorData))
         }
-      );
-      
-      }
-      // skill with old Competence area
+      )
+    }
+    // skill with old Competence area
       else {
         this.spinnerService.start();
-        this.skillsService.addSkill(this.data);
+        this.skillsService.addSkill(this.data).subscribe(
+          (resp: any) => {
+            this.spinnerService.stop();
+            console.log("New Skill added ", resp);
+            this.dialogService.showTimedAlert(this.translateService.instant('message.success.competenceCreated'), 1000);
+            //this.newSkillForm.reset();
+          },
+          (err: any) => {
+            this.spinnerService.stop();
+            console.log("Error while adding Skill "+JSON.stringify(err));
+            if (err.error.error && err.error.error === "DataIntegrityViolationException") {
+              setTimeout(() => {
+                this.dialogService.showTimedAlert(this.translateService.instant('message.error.skillAlreadyPresent'), 1500);
+              }, 0);
+            } else if (err.status != 401)
+              this.dialogService.showTimedAlert(this.translateService.instant('message.error.genericError'), 1500);
+          }
+        );
       }
     }
   }
 
   /* getFormValidationErrors() {
     Object.keys(this.newSkillForm.controls).forEach(key => {
-  
+
     const controlErrors: ValidationErrors = this.newSkillForm.get(key).errors;
     if (controlErrors != null) {
           Object.keys(controlErrors).forEach(keyError => {
