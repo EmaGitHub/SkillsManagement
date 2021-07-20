@@ -12,9 +12,16 @@ export class ErrorInterceptor implements HttpInterceptor {
 
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         return next.handle(request).pipe(catchError(err => {
+            if (err.status === 403) {
+                // unauthorized request
+                console.log("Forbidden request");
+                this.dialogService.showTimedAlert(this.translateService.instant('message.warn.unauthorizedOperation'), 1500);
+                setTimeout(() => {
+                }, 1500);
+            }
             if (err.status === 401) {
                 // auto logout if 401 response returned from api
-                console.log("UnAuthorized request")
+                console.log("UnAuthorized request");
                 this.dialogService.showTimedAlert(this.translateService.instant('message.warn.sessionExpired'), 1500);
                 setTimeout(() => {
                     this.authenticationService.logout();

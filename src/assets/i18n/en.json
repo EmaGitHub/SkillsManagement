@@ -17,7 +17,8 @@
         "selectSkillArea": "Select competence area",
         "newSkillArea": "New competence area",
         "newSkillAreaName": "New competence area name",
-        "create": "Create"
+        "create": "Create",
+        "skillListTitle": "Competences list"
     },
     "menu": {
         "search": "Search",
@@ -38,11 +39,17 @@
             "loginSucceeded": "Login succeeded",
             "loadSuccedeed": "Load succeeded",
             "logoutSucceeded": "Logout succeeded",
-            "competenceCreated": "Competence created"
+            "competenceCreated": "Competence created",
+            "yes": "Si"
         },
         "warn": {
             "noDataFound": "No data found",
-            "sessionExpired": "Session expired"
+            "sessionExpired": "Session expired",
+            "unauthorizedOperation": "Unauthorized operation",
+            "deleteSkillArea": "Delete competence area",
+            "deleteSkill": "Delete competence",
+            "confirmDeleteSkillArea": "Are you sure you want to delete competence area and all associated skills?",
+            "confirmDeleteSkill": "Are you sure you want to delete competence?"
         },
         "error": {
             "error": "Error",

@@ -1,4 +1,5 @@
 import { Injectable } from "@angular/core";
+import { Subscription } from "rxjs";
 import swal from 'sweetalert2';
 
 @Injectable({
@@ -10,6 +11,28 @@ export class DialogService {
 
     public showSimpleAlert(message: string) {
         swal.fire(message);
+    }
+
+    public showConfirmAlert(title: string, message: string, confirm: string, decline: string, callback: () => void) {
+      swal.fire({
+        title: title,
+        text: message,
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: confirm,
+        cancelButtonText: decline
+      }).then((result) => {
+        if (result.isConfirmed) {
+          /* swal.fire(
+            'Deleted!',
+            'Your file has been deleted.',
+            'success'
+          ) */
+          callback();
+        }
+      })
     }
 
     public showTimedAlert(message: string, duration: number) {

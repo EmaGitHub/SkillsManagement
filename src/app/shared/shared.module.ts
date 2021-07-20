@@ -25,13 +25,14 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
-import { MatDialogModule, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatListModule } from '@angular/material/list';
 import { MatSelectModule } from '@angular/material/select';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 // ngx-translate
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
@@ -152,6 +153,7 @@ const APP_CUSTOM_DATE_FORMATS = {
     MatCheckboxModule,
     MatButtonToggleModule,
     MatFormFieldModule,
+    MatExpansionModule
   ],
   exports: [
     BrowserModule,
@@ -202,6 +204,7 @@ const APP_CUSTOM_DATE_FORMATS = {
     MatSelectModule,
     MatCheckboxModule,
     MatButtonToggleModule,
+    MatExpansionModule,
     // *components
     PaginatorComponent,
     ModalComponent,

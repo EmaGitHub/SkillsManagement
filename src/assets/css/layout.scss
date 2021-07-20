@@ -176,6 +176,7 @@ html {
         }
         
         & .sidebar {
+            background-color: #f3f3f3;
             position: relative;
             overflow: visible!important;
             -webkit-box-orient: vertical;
@@ -197,7 +198,6 @@ html {
             overflow-y: auto!important;
             padding-bottom: 0;
             padding-top: 0;
-            background: #f9f9f9;
 
             .inner {
                 

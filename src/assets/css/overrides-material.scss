@@ -32,6 +32,20 @@ table.mat-table tbody tr.mat-row td.mat-cell {
     font-size: 14px !important;
     font-weight: 600;
 }
+.mat-button {
+    background-color: white;
+}
+
+// EXPANSION TABLE
+.mat-expansion-panel-header:not([aria-disabled=true]) {
+    cursor: auto !important;
+}
+.mat-expansion-indicator {
+    cursor: pointer;
+}
+.mat-expansion-panel-body {
+    padding: 0 20px 0px !important;
+}
 
 // BUTTON TOGGLE
 .mat-button-toggle-appearance-standard .mat-button-toggle-label-content {
@@ -42,6 +56,7 @@ table.mat-table tbody tr.mat-row td.mat-cell {
 
 // CARDS
 .mat-card {
+    background-color: #f3f3f3;
     .mat-card-header {
         margin: -16px;
         padding: 0 16px 8px 16px;

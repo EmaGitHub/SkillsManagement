@@ -33,6 +33,7 @@ export class EditSkillsComponent implements OnInit {
 }); 
 
   data: Skill = {
+    id: -1,
     competence: '',
     areaId: -1,
     newCompetenceArea: ''

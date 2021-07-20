@@ -17,7 +17,8 @@
         "selectSkillArea": "Seleziona area di competenza",
         "newSkillArea": "Nuova area di competenza",
         "newSkillAreaName": "Nome nuova area di competenza",
-        "create": "Crea"
+        "create": "Crea",
+        "skillListTitle": "Lista delle competenze"
     },
     "menu": {
         "search": "Ricerca",
@@ -39,11 +40,17 @@
             "loginSucceeded": "Login avvenuto con successo",
             "loadSucceeded": "Caricamento avvenuto con successo",
             "logoutSucceeded": "Disconnessione avvenuta con successo",
-            "competenceCreated": "Competence created"
+            "competenceCreated": "Competenza creata",
+            "yes": "Si"
         },
         "warn": {
             "noDataFound": "Nessun dato trovato",
-            "sessionExpired": "Sessione scaduta"
+            "sessionExpired": "Sessione scaduta",
+            "unauthorizedOperation": "Operazione non autorizzata",
+            "deleteSkillArea": "Cancellazione area di competenze",
+            "deleteSkill": "Cancellazione competenza",
+            "confirmDeleteSkillArea": "Sei sicuro di voler cancellare l'area di competenza e tutte le competenze associate?",
+            "confirmDeleteSkill": "Sei sicuro di voler cancellare la competenza?"
         },
         "error": {
             "error": "Errore",

@@ -1,0 +1,21 @@
+:host {
+
+    .expansion-panel {
+
+        .panel-header {
+            padding-right: 40px;
+        }
+        .trash-icon {
+            padding: 0 10px;
+            margin: 0px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            border: 1px solid #ff8a8a;
+            background-color: #ffe5e5;
+        }
+
+        li {
+            margin: 10px 0;
+        }
+    }
+}

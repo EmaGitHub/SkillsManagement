@@ -66,11 +66,14 @@
             margin-top: 10px;
             margin-bottom: 30px;
     
-            .mat-button-toggle-checked {
-                background-color: #0c58a9;
-                border: 1px solid #00b1ff;
-                color: #ffffff !important;
-                box-shadow: 2px 3px 10px;
+            mat-button-toggle-group {
+                box-shadow: 3px 3px 6px grey;
+                .mat-button-toggle-checked {
+                    background-color: #0c58a9;
+                    border: 1px solid #00b1ff;
+                    color: #ffffff !important;
+                    box-shadow: 2px 2px 10px;
+                }
             }
         } 
         ::ng-deep .mat-tab-header {

@@ -25,4 +25,12 @@ export class SkillsService {
         let skillArea = {name: skillAreaName}
         return this.httpClient.post<any>("skill/area", skillArea)
     }
+
+    public deleteSkill(skillId: number): Observable<any> {
+        return this.httpClient.delete<any>("skill/"+skillId);
+    }
+
+    public deleteSkillArea(skillAreaId: number): Observable<any> {
+        return this.httpClient.delete<any>("skill/area/"+skillAreaId);
+    }
 }
