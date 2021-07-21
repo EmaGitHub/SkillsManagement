@@ -7,28 +7,30 @@
     <mat-card-content>
         <mat-accordion>
             <mat-expansion-panel *ngFor="let area of skillAreas" class="expansion-panel">
-              <mat-expansion-panel-header class="panel-header" #panelH>
+              <mat-expansion-panel-header class="expansion-panel-header" #panelH>
                 <mat-panel-title>
                     <span class="panel-title">
                         {{area.name}}
                     </span>
-                    <div  (click)="panelH._toggle()">
+                    <div (click)="panelH._toggle()">
                         <span class="trash-icon" (click)="deleteArea(area.id)">
                             <i class="fa fa-trash"></i>
                         </span>
                     </div>
                 </mat-panel-title>
               </mat-expansion-panel-header>
-                <ul>
-                    <li class="skill" *ngFor="let skill of filteredList(area.id)">
-                        <div>
-                            {{skill.competence}}
-                            <span class="trash-icon" (click)="deleteSkill(skill.id)">
-                                <i class="fa fa-trash"></i>
-                            </span>
-                        </div>
-                    </li>
-                </ul>
+                <div class="expansion-panel-content">
+                    <ul>
+                        <li class="skill" *ngFor="let skill of filteredList(area.id)">
+                            <div>
+                                {{skill.competence}}
+                                <span class="trash-icon" (click)="deleteSkill(skill.id)">
+                                    <i class="fa fa-trash"></i>
+                                </span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </mat-expansion-panel>
           </mat-accordion>
 

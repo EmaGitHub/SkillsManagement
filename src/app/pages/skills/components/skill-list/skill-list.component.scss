@@ -2,8 +2,11 @@
 
     .expansion-panel {
 
-        .panel-header {
+        .expansion-panel-header {
             padding-right: 40px;
+        }
+        .expansion-content {
+
         }
         .trash-icon {
             padding: 0 10px;
@@ -12,6 +15,7 @@
             cursor: pointer;
             border: 1px solid #ff8a8a;
             background-color: #ffe5e5;
+            box-shadow: 1px 1px 1px grey;
         }
 
         li {
