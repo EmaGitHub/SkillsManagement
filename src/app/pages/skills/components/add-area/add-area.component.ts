@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { FormGroupDirective } from '@angular/forms';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
 import { DialogService } from 'src/app/core/services/utils/DialogService';
@@ -33,7 +34,7 @@ export class AddAreaComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  addArea() {
+  addArea(formDirective: FormGroupDirective) {
     if (this.areaForm.valid) {
       console.log("Creation area ");
       let skillArea: SkillArea = {
@@ -43,7 +44,7 @@ export class AddAreaComponent implements OnInit {
       this.skillsService.addArea(skillArea).subscribe(
         (area: SkillArea) => {
           console.log("Area created "+JSON.stringify(area));
-          this.resetForm();
+          this.resetForm(formDirective);
           this.closeEvent.emit(area);
           this.dialogService.showTimedAlert(this.translateService.instant('message.success.competenceAreaCreated'), 1000);
         },
@@ -55,19 +56,15 @@ export class AddAreaComponent implements OnInit {
             }, 0);
           } else if (err.status != 401)
             this.dialogService.showTimedAlert(this.translateService.instant('message.error.genericError'), 1500);
-          this.resetForm();
+          this.resetForm(formDirective);
           this.closeEvent.emit(err);
         });
       }
   }
 
-  resetForm() {
-    setTimeout(() => {
-      this.areaForm.reset();
-      this.areaForm.markAsPristine();
-      this.areaForm.markAsUntouched();
-      this.areaForm.updateValueAndValidity();
-    }, 500);
+  resetForm(formDirective: FormGroupDirective) {
+    formDirective.resetForm();
+    this.areaForm.reset();
   }
 
 }

@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormGroupDirective } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
 import { DialogService } from 'src/app/core/services/utils/DialogService';
 import { SkillArea } from '../../models/skill-area.model';
@@ -34,7 +34,7 @@ export class AddSkillComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  addSkill() {
+  addSkill(formDirective: FormGroupDirective) {
     if (this.skillForm.valid) {
       console.log("Creation skill ");
       let skill: Skill = {
@@ -44,7 +44,7 @@ export class AddSkillComponent implements OnInit {
       this.skillsService.addSkill(skill).subscribe(
         (skill: any) => {
           console.log("Area created");
-          this.resetForm();
+          this.resetForm(formDirective);
           this.closeEvent.emit(skill);
           this.dialogService.showTimedAlert(this.translateService.instant('message.success.competenceCreated'), 1000);
         },
@@ -56,16 +56,15 @@ export class AddSkillComponent implements OnInit {
             }, 0);
           } else if (err.status != 401)
             this.dialogService.showTimedAlert(this.translateService.instant('message.error.genericError'), 1500);
-          this.resetForm();
+          this.resetForm(formDirective);
           this.closeEvent.emit(err);
         });
       }
   }
 
-  resetForm() {
+  resetForm(formDirective: FormGroupDirective) {
+    formDirective.resetForm();
     this.skillForm.reset();
-    this.skillForm.markAsPristine();
-    this.skillForm.markAsUntouched();
-    //this.skillForm.updateValueAndValidity();
   }
+
 }

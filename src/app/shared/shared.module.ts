@@ -5,18 +5,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 // primeng
-import { MessageService } from 'primeng/api';
-import { OverlayPanelModule } from 'primeng/overlaypanel';
 import { DialogModule } from 'primeng/dialog';
-import { TooltipModule } from 'primeng/tooltip';
-import { SidebarModule } from 'primeng/sidebar';
 
 // material
 import { MAT_DATE_LOCALE, DateAdapter, MAT_DATE_FORMATS } from '@angular/material/core';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatCardModule } from '@angular/material/card';
-import { MatMomentDateModule, MomentDateAdapter } from '@angular/material-moment-adapter';
-import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MomentDateAdapter } from '@angular/material-moment-adapter';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
@@ -25,7 +20,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
-import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatListModule } from '@angular/material/list';
@@ -126,14 +121,9 @@ const APP_CUSTOM_DATE_FORMATS = {
       }
     }),
     // *primeng
-    OverlayPanelModule,
     DialogModule,
-    TooltipModule,
-    SidebarModule,
     // *material
     MatCardModule,
-    MatMomentDateModule,
-    MatDatepickerModule,
     MatProgressSpinnerModule,
     MatInputModule,
     MatIconModule,
@@ -144,6 +134,7 @@ const APP_CUSTOM_DATE_FORMATS = {
     MatTableModule,
     MatTooltipModule,
     MatTabsModule,
+    MatDialogModule,
     MatListModule,
     MatSelectModule,
     MatCheckboxModule,
@@ -179,14 +170,9 @@ const APP_CUSTOM_DATE_FORMATS = {
     NoDatePipe,
     PercentagePipe,
     // *primeng
-    OverlayPanelModule,
     DialogModule,
-    TooltipModule,
-    SidebarModule,
     // *material
     MatCardModule,
-    MatMomentDateModule,
-    MatDatepickerModule,
     MatProgressSpinnerModule,
     MatInputModule,
     MatIconModule,
@@ -196,6 +182,7 @@ const APP_CUSTOM_DATE_FORMATS = {
     MatTableModule,
     MatTooltipModule,
     MatTabsModule,
+    MatDialogModule,
     MatListModule,
     MatSelectModule,
     MatCheckboxModule,
@@ -214,7 +201,6 @@ const APP_CUSTOM_DATE_FORMATS = {
     // here, due to limitations of our example generation script.
     { provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE] },
     { provide: MAT_DATE_FORMATS, useValue: APP_CUSTOM_DATE_FORMATS },
-    { provide: MessageService, useClass: MessageService },
     { provide: MAT_DIALOG_DATA, useValue: {} },
     { provide: MatDialogRef, useValue: {} },
     // *pipes
