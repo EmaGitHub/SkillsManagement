@@ -19,6 +19,7 @@ import { ErrorInterceptor } from './core/http-utils/ErrorInterceptor';
 import { AccountModule } from './pages/account/account.module';
 import { HomeComponent } from './pages/home/home.component';
 import { SkillsModule } from './pages/skills/skills.module';
+import { UsersModule } from './pages/users/users.module';
 
 // ngx-translate - required for AOT compilation
 export function HttpLoaderFactory(http: HttpClient) {
@@ -41,10 +42,12 @@ export function HttpLoaderFactory(http: HttpClient) {
     // *app commons
     CoreModule,
     SharedModule,
-    // **UTENTI
+    // **ACCOUNT
     AccountModule,
     // **COMPETENZE
     SkillsModule,
+    // **USERS
+    UsersModule,
     // *ngx-translate
     TranslateModule.forRoot({
       loader: {
