@@ -35,6 +35,14 @@
     "icon": "users",
     "children": [
       {
+        "id": "createUser",
+        "label": "menu.createUser",
+        "isNavigable": true,
+        "level": 2,
+        "roles": [1],
+        "url": "/skills/home"
+      },
+      {
         "id": "usersList",
         "label": "menu.usersList",
         "isNavigable": true,
@@ -67,6 +75,14 @@
         "level": 2,
         "roles": [1,2],
         "url": "/skills/list"
+      },
+      {
+        "id": "skillsTree",
+        "label": "menu.skillsTree",
+        "isNavigable": true,
+        "level": 2,
+        "roles": [1,2],
+        "url": "/skills/tree"
       }
     ]
   },

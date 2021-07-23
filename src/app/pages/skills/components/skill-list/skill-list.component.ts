@@ -14,7 +14,6 @@ import { SkillsService } from '../../services/skills.service';
 })
 export class SkillListComponent implements OnInit {
 
-  apiResponse: number = 0;
   skills: Skill[];
   skillAreas: SkillArea[];
 

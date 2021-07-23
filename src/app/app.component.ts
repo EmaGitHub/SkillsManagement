@@ -1,8 +1,7 @@
 import { Router, NavigationStart } from '@angular/router';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { Lang } from './shared/domain/enums/lang';
-import { ModalComponent } from './shared/components/modal/modal.component';
 import { Subscription } from 'rxjs';
 import { SideMenuService } from './core/services/utils/side-menu.service';
 import { LanguageService } from './core/services/general-config/language.service';
@@ -13,10 +12,6 @@ import { LanguageService } from './core/services/general-config/language.service
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-
-  @ViewChild('sessionExpiredModal') sessionExpiredModal: ModalComponent;
-
-  @ViewChild('logoutModal') logoutModal: ModalComponent;
 
   private refreshSubscription: Subscription;
   private languageSubscription: Subscription;

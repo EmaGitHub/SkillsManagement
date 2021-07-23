@@ -15,8 +15,4 @@ export class ModalMessageService {
         return this._modalMessageSubject$.asObservable();
     }
 
-    public showSessionExpired() {
-        this._modalMessageSubject$.next();
-    }
-
 }

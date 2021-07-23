@@ -6,12 +6,20 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { SkillListComponent } from './components/skill-list/skill-list.component';
 import { EditSkillsComponent } from './components/edit-skills/edit-skills.component';
 import { SkillsService } from './services/skills.service';
+import { SkillItemComponent } from './components/skill-item/skill-item.component';
+import { SkillsTreeComponent } from './components/skills-tree/skills-tree.component';
+import { AddAreaComponent } from './components/add-area/add-area.component';
+import { AddSkillComponent } from './components/add-skill/add-skill.component';
 
 @NgModule({
   declarations: [
     // *pages
     SkillListComponent,
-    EditSkillsComponent
+    EditSkillsComponent,
+    SkillItemComponent,
+    SkillsTreeComponent,
+    AddAreaComponent,
+    AddSkillComponent
 ],
   imports: [
     CommonModule,

@@ -1,0 +1,47 @@
+:host {
+    .expansion-panel {
+
+        .expansion-panel-header {
+            background-color: #efefef;
+            padding-right: 40px;
+            margin-bottom: 8px;
+            border: 1px solid #bdbdbd;
+            .area-icon {
+                font-size: 16px;
+                padding: 0 10px;
+            }
+            .panel-title {
+                width: 100%;
+            }  
+        }
+
+        .buttons {
+            width: 100%;
+            text-align: right;
+            .trash-icon {
+                padding: 0 10px;
+                margin: 0px 20px;
+                border-radius: 10px;
+                cursor: pointer;
+                background-color: #ffffff;
+                box-shadow: 1px 1px 1px grey;
+            }
+            .plus-icon {
+                padding: 0 10px;
+                margin-left: 20px;
+                border-radius: 10px;
+                cursor: pointer;
+                background-color: #ffffff;
+                box-shadow: 1px 1px 1px grey;
+            }
+        }
+        
+        ul {
+            margin-bottom: 0;
+            li {
+                padding: 8px 0;
+            }
+        }
+    }
+    
+}

@@ -30,7 +30,7 @@ export class EditSkillsComponent implements OnInit {
     skill: new FormControl('', [Validators.required, this.noWhitespaceValidator]),
     skillArea: new FormControl('', [Validators.required, this.noSelectAreaValidator]),
     newSkillArea: new FormControl('', [])
-}); 
+  }); 
 
   data: Skill = {
     id: -1,
@@ -76,7 +76,7 @@ export class EditSkillsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.spinnerService.start();
+    //this.spinnerService.start();
     this.skillAreaSubscription = this.retrieveSkillAreas();
   }
 

@@ -1,0 +1,50 @@
+
+<mat-expansion-panel class="expansion-panel" *ngIf="item.isArea" (opened)="dirExpanded = true" (closed)="dirExpanded = false">
+    <mat-expansion-panel-header class="expansion-panel-header" #panelH [collapsedHeight]="'40px'" [expandedHeight]="'40px'">
+    <mat-panel-title>
+        <span class="area-icon">
+            <i [ngClass]="dirExpanded == true ? 'fa fa-folder-open-o' : 'fa fa-folder-o'" aria-hidden="true"></i>
+        </span>
+        <span class="panel-title">
+            {{item.label}} (id = {{item.id}})
+        </span>
+        <span class="buttons">
+            <span (click)="panelH._toggle()">
+                <span class="plus-icon" (click)="createSkill(item.id)">
+                    <i class="fa fa-plus-circle"></i>
+                </span>
+            </span>
+            <span (click)="panelH._toggle()">
+                <span class="plus-icon" (click)="createArea(item.id)">
+                    <i class="fa fa-folder"></i>
+                </span>
+            </span>
+            <span (click)="panelH._toggle()">
+                <span class="trash-icon" (click)="deleteArea(item.id)">
+                    <i class="fa fa-trash"></i>
+                </span>
+            </span>
+        </span>
+    </mat-panel-title>
+    </mat-expansion-panel-header>
+    <div>
+        <span *ngFor="let item of item.children">
+            <app-skill-item [item]="item" (addSkill)="createSkill($event)" (addArea)="createArea($event)" 
+                                            (removeSkill)="deleteSkill($event)" (removeArea)="deleteArea($event)"></app-skill-item>
+        </span>
+    </div>
+</mat-expansion-panel>
+<div *ngIf="!item.isArea">
+    <ul>
+        <li class="skill">
+            <div>
+                {{item.label}}
+                <span class="buttons">
+                    <span class="trash-icon" (click)="deleteSkill(item.id)">
+                        <i class="fa fa-trash"></i>
+                    </span>
+                </span>
+            </div>
+        </li>
+    </ul>
+</div>

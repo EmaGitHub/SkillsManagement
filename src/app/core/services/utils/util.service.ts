@@ -47,39 +47,35 @@ export class UtilService {
 
     let messageWrapper: any;
 
-    if (!this.checkSession(err)) {
-      this.modalMessageService.showSessionExpired();
+    if (err instanceof RestResponse) {
+      messageWrapper = err;
+    } else if (err instanceof HttpErrorResponse) {
+      messageWrapper = err.error;
+    } else {
+      console.error('error response type not managed', err);
     }
-    else {
-      if (err instanceof RestResponse) {
-        messageWrapper = err;
-      } else if (err instanceof HttpErrorResponse) {
-        messageWrapper = err.error;
-      } else {
-        console.error('error response type not managed', err);
-      }
 
-      if (messageWrapper?.errors) {
-        severity = 'error';
-        summary = 'Error';
-        messages = messageWrapper.errors;
-      } else if (messageWrapper?.warnings) {
-        severity = 'warn';
-        summary = 'Warn';
-        messages = messageWrapper.warnings;
-      } else if (messageWrapper?.info) {
-        severity = 'info';
-        summary = 'Info';
-        messages = messageWrapper.info;
-      } else {
-        severity = 'error';
-        summary = 'Error';
-        messages = [{ description: this.translateService.instant('message.error.genericError') }];
-      }
-
-      this.showMessages(severity, summary, messages);
+    if (messageWrapper?.errors) {
+      severity = 'error';
+      summary = 'Error';
+      messages = messageWrapper.errors;
+    } else if (messageWrapper?.warnings) {
+      severity = 'warn';
+      summary = 'Warn';
+      messages = messageWrapper.warnings;
+    } else if (messageWrapper?.info) {
+      severity = 'info';
+      summary = 'Info';
+      messages = messageWrapper.info;
+    } else {
+      severity = 'error';
+      summary = 'Error';
+      messages = [{ description: this.translateService.instant('message.error.genericError') }];
     }
+
+    this.showMessages(severity, summary, messages);
   }
+  
 
   private showMessages(severity, summary, messages: Message[]) {
     if (messages && messages.length > 0) {

@@ -6,6 +6,7 @@ import { LoginComponent } from './pages/account/components/login/login.component
 import { WelcomeComponent } from './pages/account/components/welcome/welcome.component';
 import { SkillListComponent } from './pages/skills/components/skill-list/skill-list.component';
 import { EditSkillsComponent } from './pages/skills/components/edit-skills/edit-skills.component';
+import { SkillsTreeComponent } from './pages/skills/components/skills-tree/skills-tree.component';
 
 const routes: Routes = [
     {
@@ -31,7 +32,8 @@ const routes: Routes = [
                     { path: '', redirectTo: 'home', pathMatch: 'full' },
                     { path: 'home', component: HomeComponent },
                     { path: 'edit', component: EditSkillsComponent },
-                    { path: 'list', component: SkillListComponent }
+                    { path: 'list', component: SkillListComponent },
+                    { path: 'tree', component: SkillsTreeComponent }
                 ]
             }
         ]

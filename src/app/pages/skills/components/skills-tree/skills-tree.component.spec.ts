@@ -1,19 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { LogoutModalComponent } from './logout-modal.component';
 
-describe('LogoutModalComponent', () => {
-  let component: LogoutModalComponent;
-  let fixture: ComponentFixture<LogoutModalComponent>;
+import { SkillsTreeComponent } from './skills-tree.component';
+
+describe('SkillsTreeComponent', () => {
+  let component: SkillsTreeComponent;
+  let fixture: ComponentFixture<SkillsTreeComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LogoutModalComponent ]
+      declarations: [ SkillsTreeComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LogoutModalComponent);
+    fixture = TestBed.createComponent(SkillsTreeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

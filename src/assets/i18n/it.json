@@ -9,16 +9,21 @@
         "access": "Accedi",
         "exit": "Esci",
         "register": "Registrazione",
+        "registerButton": "Registrati",
         "registerLabel": "Non hai un'account? Registrati",
         "loginLabel": "Vai al tab di login",
         "createSkillTitle": "Crea nuova competenza",
         "skillName": "Nome nuova competenza",
         "noArea": "Nessuna area di competenza",
+        "addArea": "Aggiungi nuova area di competenza",
+        "addSkill": "Aggiungi nuova competenza",
         "selectSkillArea": "Seleziona area di competenza",
+        "newSkill": "Nuova competenza",
         "newSkillArea": "Nuova area di competenza",
         "newSkillAreaName": "Nome nuova area di competenza",
         "create": "Crea",
-        "skillListTitle": "Lista delle competenze"
+        "skillListTitle": "Lista delle competenze",
+        "skillsTreeTitle": "Gerarchia aree di competenza"
     },
     "menu": {
         "search": "Ricerca",
@@ -28,7 +33,9 @@
         "createSkill": "Crea competenza",
         "skillsList": "Lista competenze",
         "users": "Utenti",
-        "usersList": "Lista utenti"
+        "usersList": "Lista utenti",
+        "skillsTree": "Gerarchia competenze",
+        "createUser": "Crea utente"
     },
     "action": {
         "filter": "Filtra",
@@ -40,6 +47,7 @@
             "loginSucceeded": "Login avvenuto con successo",
             "loadSucceeded": "Caricamento avvenuto con successo",
             "logoutSucceeded": "Disconnessione avvenuta con successo",
+            "competenceAreaCreated": "Area di competenza creata",
             "competenceCreated": "Competenza creata",
             "yes": "Si"
         },

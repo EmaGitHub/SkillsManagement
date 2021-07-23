@@ -9,16 +9,21 @@
         "access": "Access",
         "exit": "Exit",
         "register": "Register",
+        "registerButton": "Register",
         "registerLabel": "Do not have any account? Sign-up",
         "loginLabel": "Go to login tab",
         "createSkillTitle": "Create new competence",
         "skillName": "New competence name",
+        "addArea": "Add new competence area",
+        "addSkill": "Add new competence",
         "noArea": "No competence area",
         "selectSkillArea": "Select competence area",
+        "newSkill": "Nuova competenza",
         "newSkillArea": "New competence area",
         "newSkillAreaName": "New competence area name",
         "create": "Create",
-        "skillListTitle": "Competences list"
+        "skillListTitle": "Competences list",
+        "skillsTreeTitle": "Competence areas hierarchy"
     },
     "menu": {
         "search": "Search",
@@ -28,7 +33,9 @@
         "createSkill": "Create competence",
         "skillsList": "Competences list",
         "users": "Users",
-        "usersList": "Users list"
+        "usersList": "Users list",
+        "skillsTree": "Skills hierarchy",
+        "createUser": "Create user"
     },
     "action": {
         "filter": "Filter"
@@ -39,6 +46,7 @@
             "loginSucceeded": "Login succeeded",
             "loadSuccedeed": "Load succeeded",
             "logoutSucceeded": "Logout succeeded",
+            "competenceAreaCreated": "Competence area created",
             "competenceCreated": "Competence created",
             "yes": "Si"
         },

@@ -38,11 +38,11 @@ body {
         max-width: 80%;
         min-width: 220px;
         z-index: 2048 !important;
+        box-shadow: rgb(0 0 0 / 25%) 0px 14px 28px, rgb(0 0 0 / 22%) 0px 10px 10px;
 
         .ui-dialog-titlebar {
             border: 0;
-            background-color: #49acd2;
-            background-color: #23b7e5;
+            background-color: #2787a5;
             color: #f3f3f3;
             padding: 1em;
             font-weight: 500;

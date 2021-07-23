@@ -1,0 +1,23 @@
+<mat-card class="fadeIn">
+    <mat-card-header>
+        <mat-card-title class="title">
+            {{'label.skillsTreeTitle' | translate}}
+        </mat-card-title>
+        <span class="button-span">
+            <span class="plus-icon" (click)="showAreaModal(-1)">
+                <i class="fa fa-folder"></i>            
+            </span>
+        </span>
+    </mat-card-header>
+    <mat-card-content>
+        <mat-accordion [multi]="true">
+            <div *ngFor="let item of skillItems">
+                <app-skill-item [item]="item" (addSkill)="showSkillModal($event)" (addArea)="showAreaModal($event)" 
+                                                (removeArea)="deleteArea($event)" (removeSkill)="deleteSkill($event)"></app-skill-item>
+            </div>
+        </mat-accordion>
+    </mat-card-content>
+</mat-card>
+
+<app-modal [title]="'label.addArea' | translate" #areaModal><app-add-area (closeEvent)="areaCreated($event)" [parentAreaId]="parentAreaId"></app-add-area></app-modal>
+<app-modal [title]="'label.addSkill' | translate" #skillModal><app-add-skill (closeEvent)="skillCreated($event)" [parentAreaId]="parentAreaId"></app-add-skill></app-modal>

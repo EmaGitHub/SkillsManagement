@@ -57,11 +57,9 @@ import { HeaderComponent } from './components/header/header.component';
 import { TranslateModule, TranslateLoader, TranslatePipe } from '@ngx-translate/core';
 import { ModalComponent } from './components/modal/modal.component';
 import { NoDatePipe } from './pipes/no-date.pipe';
-import { ExpiredSessionModalComponent } from './components/modal/expired-session-modal/expired-session-modal.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoggedUserComponent } from './components/logged-user/logged-user.component';
-import { LogoutModalComponent } from './components/modal/logout-modal/logout-modal.component';
 import { OnlyNumberDirective } from './directives/only-number.directive';
 import { StatusMessageComponent } from './components/status-message/status-message.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
@@ -106,8 +104,6 @@ const APP_CUSTOM_DATE_FORMATS = {
     // *components
     PaginatorComponent,
     ModalComponent,
-    ExpiredSessionModalComponent,
-    LogoutModalComponent,
     LoggedUserComponent,
     StatusMessageComponent,
     SpinnerComponent,
@@ -208,8 +204,6 @@ const APP_CUSTOM_DATE_FORMATS = {
     // *components
     PaginatorComponent,
     ModalComponent,
-    ExpiredSessionModalComponent,
-    LogoutModalComponent,
     LoggedUserComponent,
     StatusMessageComponent
   ],
