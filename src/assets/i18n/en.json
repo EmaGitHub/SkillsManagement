@@ -22,6 +22,8 @@
         "newSkillArea": "New competence area",
         "newSkillAreaName": "New competence area name",
         "create": "Create",
+        "delete": "Delete",
+        "remove": "Remove",
         "skillListTitle": "Competences list",
         "skillsTreeTitle": "Competence areas hierarchy"
     },
@@ -46,8 +48,8 @@
             "loginSucceeded": "Login succeeded",
             "loadSuccedeed": "Load succeeded",
             "logoutSucceeded": "Logout succeeded",
-            "competenceAreaCreated": "Competence area created",
-            "competenceCreated": "Competence created",
+            "competenceAreaCreated": "Competence area created successfully",
+            "competenceCreated": "Competence created successfully",
             "yes": "Si"
         },
         "warn": {

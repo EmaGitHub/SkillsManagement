@@ -22,6 +22,8 @@
         "newSkillArea": "Nuova area di competenza",
         "newSkillAreaName": "Nome nuova area di competenza",
         "create": "Crea",
+        "delete": "Elimina",
+        "remove": "Rimuovi",
         "skillListTitle": "Lista delle competenze",
         "skillsTreeTitle": "Gerarchia aree di competenza"
     },
@@ -44,11 +46,11 @@
     "message": {
         "success": {
             "userCreated": "Utente creato",
-            "loginSucceeded": "Login avvenuto con successo",
-            "loadSucceeded": "Caricamento avvenuto con successo",
+            "loginSucceeded": "Login avvenuto correttamento",
+            "loadSucceeded": "Caricamento avvenuto correttamente",
             "logoutSucceeded": "Disconnessione avvenuta con successo",
-            "competenceAreaCreated": "Area di competenza creata",
-            "competenceCreated": "Competenza creata",
+            "competenceAreaCreated": "Area di competenza creata correttamente",
+            "competenceCreated": "Competenza creata correttamente",
             "yes": "Si"
         },
         "warn": {

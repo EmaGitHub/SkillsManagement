@@ -9,17 +9,17 @@
             {{item.label}} (id = {{item.id}})
         </span>
         <span class="buttons">
-            <span (click)="panelH._toggle()">
-                <span class="plus-icon" (click)="createSkill(item.id)">
+            <span (click)="panelH._toggle()" matTooltip="{{'label.newSkill' | translate}}" matTooltipPosition="above">
+                <span class="trash-icon" (click)="createSkill(item.id)">
                     <i class="fa fa-plus-circle"></i>
                 </span>
             </span>
-            <span (click)="panelH._toggle()">
+            <span (click)="panelH._toggle()" matTooltip="{{'label.newSkillArea' | translate}}" matTooltipPosition="above">
                 <span class="plus-icon" (click)="createArea(item.id)">
                     <i class="fa fa-folder"></i>
                 </span>
             </span>
-            <span (click)="panelH._toggle()">
+            <span (click)="panelH._toggle()" matTooltip="{{'label.delete' | translate}}" matTooltipPosition="above">
                 <span class="trash-icon" (click)="deleteArea(item.id)">
                     <i class="fa fa-trash"></i>
                 </span>
@@ -39,7 +39,7 @@
         <li class="skill">
             <div>
                 {{item.label}}
-                <span class="buttons">
+                <span class="buttons" matTooltip="{{'label.delete' | translate}}" matTooltipPosition="above">
                     <span class="trash-icon" (click)="deleteSkill(item.id)">
                         <i class="fa fa-trash"></i>
                     </span>
