@@ -1,4 +1,4 @@
-<span style="color:blue">some *blue* text</span>
+<span style="color:blue">some *This is Blue italic.* text</span>
 
 You can use the diff language tag to generate some colored text:
 
