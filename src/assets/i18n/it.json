@@ -51,7 +51,9 @@
             "logoutSucceeded": "Disconnessione avvenuta con successo",
             "competenceAreaCreated": "Area di competenza creata correttamente",
             "competenceCreated": "Competenza creata correttamente",
-            "yes": "Si"
+            "yes": "Si",
+            "areaDeleted": "Area rimossa", 
+            "skillDeleted": "Competenza rimossa"
         },
         "warn": {
             "noDataFound": "Nessun dato trovato",

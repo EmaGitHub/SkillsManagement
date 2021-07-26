@@ -119,6 +119,7 @@ export class SkillsTreeComponent implements OnInit {
           const result: {items: SkillItem[], index: number} = this.getItemAreaChildren(this.skillItems, areaId);  
           result.items.splice(result.index, 1)
           this.spinnerService.stop();
+          this.dialogService.showTimedAlert(this.translateService.instant('message.success.areaDeleted'), 1000);
         },
         (error: any) => {
           console.log("Err "+JSON.stringify(error));
@@ -139,6 +140,7 @@ export class SkillsTreeComponent implements OnInit {
           const result: {items: SkillItem[], index: number} = this.getItemAreaChildren(this.skillItems, skillId);  
           result.items.splice(result.index, 1)
           this.spinnerService.stop();
+          this.dialogService.showTimedAlert(this.translateService.instant('message.success.skillDeleted'), 1000);
         },
         (error: any) => {
           console.log("Err "+JSON.stringify(error));

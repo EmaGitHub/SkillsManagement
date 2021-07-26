@@ -50,7 +50,9 @@
             "logoutSucceeded": "Logout succeeded",
             "competenceAreaCreated": "Competence area created successfully",
             "competenceCreated": "Competence created successfully",
-            "yes": "Si"
+            "yes": "Yes",
+            "areaDeleted": "Area deleted", 
+            "skillDeleted": "Competence deleted"
         },
         "warn": {
             "noDataFound": "No data found",

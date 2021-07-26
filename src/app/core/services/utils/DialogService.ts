@@ -17,7 +17,7 @@ export class DialogService {
       swal.fire({
         title: title,
         text: message,
-        icon: 'warning',
+        //icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
