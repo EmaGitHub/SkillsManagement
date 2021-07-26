@@ -1,3 +1,4 @@
+<span style="color:blue">some *blue* text</span>
 
 You can use the diff language tag to generate some colored text:
 
