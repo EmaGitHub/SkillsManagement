@@ -13,3 +13,5 @@ You can use the diff language tag to generate some colored text:
 ## Second Heading
 
 This is a test to see how the colors work.
+
+![header](https://capsule-render.vercel.app/api?type=wave&color=gradient&height=300&section=footer&text=capsule%20render&fontSize=90)
