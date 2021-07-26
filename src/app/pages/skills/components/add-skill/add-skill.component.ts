@@ -36,7 +36,7 @@ export class AddSkillComponent implements OnInit {
 
   addSkill(formDirective: FormGroupDirective) {
     if (this.skillForm.valid) {
-      console.log("Creation skill ");
+      console.log("Creation skill");
       let skill: Skill = {
         competence: this.skillName,
         areaId: this.parentAreaId
