@@ -16,4 +16,4 @@ This is a test to see how the colors work.
 
 ![header](https://capsule-render.vercel.app/api?type=wave&color=gradient&height=300&section=footer&text=Rect&fontSize=90)
 
-![header](https://capsule-render.vercel.app/api?type=rounded&color=gradient&height=300&section=header&text=%20Hi%20there%20&fontSize=80&textBg=true&animation=fadeIn)
+![header](https://capsule-render.vercel.app/api?type=rectd&color=gradient&height=300&section=header&text=%20Hi%20there%20&fontSize=80&textBg=true&animation=fadeIn)
