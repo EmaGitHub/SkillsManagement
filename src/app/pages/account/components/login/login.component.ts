@@ -4,6 +4,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
 import { AuthenticationService } from 'src/app/core/services/utils/AuthenticationService';
 import { DialogService } from 'src/app/core/services/utils/DialogService';
+import { SideMenuService } from 'src/app/core/services/utils/side-menu.service';
 import { SpinnerService } from 'src/app/core/services/utils/SpinnerService';
 import { UserService } from 'src/app/core/services/utils/user.service';
 import { JwtResponse } from 'src/app/shared/domain/auth/jwt-response';
@@ -24,7 +25,7 @@ export class LoginComponent implements OnInit {
 
   loginSubscription: Subscription;
 
-  constructor(private router: Router, private spinnerService: SpinnerService, private translateService: TranslateService,
+  constructor(private router: Router, private spinnerService: SpinnerService, private translateService: TranslateService, private sideMenuService: SideMenuService,
               private authService: AuthenticationService, private dialogService: DialogService, private userService: UserService) { }
 
   ngOnInit(): void {
@@ -39,6 +40,7 @@ export class LoginComponent implements OnInit {
           this.dialogService.showTimedAlert(this.translateService.instant('message.success.loginSucceeded'), 900);
         }, 0);
         console.log("Login succeeded "+JSON.stringify(resp));
+        this.sideMenuService.pageChoose("home");
         if (resp && resp.token) {
           // store user details and jwt token in local storage to keep user logged in between page refreshes
           localStorage.setItem('currentUser', JSON.stringify(resp));
@@ -46,8 +48,8 @@ export class LoginComponent implements OnInit {
           user.username = resp.username;
           user.token = resp.token;
           this.userService.getUserSubject().next(user);
+          this.router.navigate(['./skills/home']);
       }
-        this.router.navigate(['./skills/home']);
       },
       (err: JwtResponse) => {
         this.spinnerService.stop();

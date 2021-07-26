@@ -1,5 +1,14 @@
 [
   {
+    "id": "home",
+    "label": "Home",
+    "isNavigable": true,
+    "level": 1,
+    "roles": [1],
+    "url": "/skills/home",
+    "icon": "bar-chart-o"
+  },
+  {
     "id": "search",
     "label": "menu.search",
     "isNavigable": false,
@@ -123,6 +132,6 @@
     "level": 1,
     "roles": [1],
     "url": "/skills/home",
-    "icon": "toc"
+    "icon": "database"
   }
 ]

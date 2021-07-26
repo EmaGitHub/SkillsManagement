@@ -86,7 +86,7 @@ export class SkillsTreeComponent implements OnInit {
   areaCreated(area: SkillArea) {
     this.areaModal.toggle(null);
     // if area creation succeeded
-    if (area.name) {
+    if (area.parentId) {
       // if root item
       if (area.parentId == -1) {
         this.skillItems.push({id: area.id, label: area.name, isArea: true, children: []})

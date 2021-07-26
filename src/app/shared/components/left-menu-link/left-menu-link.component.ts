@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, Input, OnDestroy, Output, EventEmitter } from '@angular/core';
 import { LeftMenuLink } from '../../domain/components/left-menu-link';
 import { Subscription } from 'rxjs';
