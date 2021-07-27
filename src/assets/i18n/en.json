@@ -8,6 +8,8 @@
         "lastName": "Last name",
         "access": "Access",
         "exit": "Exit",
+        "description": "Description",
+        "mandatory": "Mandatory",
         "register": "Register",
         "registerButton": "Register",
         "registerLabel": "Do not have any account? Sign-up",
@@ -25,7 +27,7 @@
         "delete": "Delete",
         "remove": "Remove",
         "skillListTitle": "Competences list",
-        "skillsTreeTitle": "Competence areas hierarchy"
+        "skillsTreeTitle": "Competences hierarchy"
     },
     "menu": {
         "search": "Search",

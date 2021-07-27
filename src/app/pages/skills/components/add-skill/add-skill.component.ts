@@ -2,7 +2,6 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormGroupDirective } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
 import { DialogService } from 'src/app/core/services/utils/DialogService';
-import { SkillArea } from '../../models/skill-area.model';
 import { Skill } from '../../models/skill.model';
 import { SkillsService } from '../../services/skills.service';
 
@@ -16,11 +15,13 @@ export class AddSkillComponent implements OnInit {
   @Output() closeEvent: EventEmitter<any> = new EventEmitter;
 
   skillName: string = '';
+  description: string = '';
 
   @Input() parentAreaId: number;
   
   skillForm = new FormGroup({
     skillName: new FormControl('', [Validators.required, this.noWhitespaceValidator]),
+    description: new FormControl('', [])
   }); 
 
   noWhitespaceValidator(control: FormControl) {
@@ -39,6 +40,7 @@ export class AddSkillComponent implements OnInit {
       console.log("Creation skill");
       let skill: Skill = {
         competence: this.skillName,
+        description: this.description,
         areaId: this.parentAreaId
       }
       this.skillsService.addSkill(skill).subscribe(

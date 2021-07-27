@@ -16,11 +16,13 @@ export class AddAreaComponent implements OnInit {
   @Output() closeEvent: EventEmitter<any> = new EventEmitter;
 
   areaName: string = '';
+  description: string;
 
   @Input() parentAreaId: number;
   
   areaForm = new FormGroup({
     areaName: new FormControl('', [Validators.required, this.noWhitespaceValidator]),
+    description: new FormControl('', [])
   }); 
 
   noWhitespaceValidator(control: FormControl) {
@@ -39,6 +41,7 @@ export class AddAreaComponent implements OnInit {
       console.log("Creation area ");
       let skillArea: SkillArea = {
         name: this.areaName,
+        description: this.description,
         parentId: this.parentAreaId
       }
       this.skillsService.addArea(skillArea).subscribe(

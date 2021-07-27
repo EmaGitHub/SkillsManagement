@@ -8,6 +8,8 @@
         "lastName": "Cognome",
         "access": "Accedi",
         "exit": "Esci",
+        "description": "Descrizione",
+        "mandatory": "Obbligatorio",
         "register": "Registrazione",
         "registerButton": "Registrati",
         "registerLabel": "Non hai un'account? Registrati",
@@ -25,7 +27,7 @@
         "delete": "Elimina",
         "remove": "Rimuovi",
         "skillListTitle": "Lista delle competenze",
-        "skillsTreeTitle": "Gerarchia aree di competenza"
+        "skillsTreeTitle": "Gerarchia competenze"
     },
     "menu": {
         "search": "Ricerca",
