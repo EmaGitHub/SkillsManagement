@@ -1,11 +1,20 @@
-<?xml version="1.0" encoding="utf-8"?>
-<svg version="1.1" 
-     xmlns="http://www.w3.org/2000/svg"
-     xmlns:xlink="http://www.w3.org/1999/xlink"
-     width="100" height="50"
->
-  <text font-size="16" x="10" y="20">
-    <tspan fill="red">Hello</tspan>,
-    <tspan fill="green">world</tspan>!
-  </text>
-</svg>
+
+
+You can use the diff language tag to generate some colored text:
+
+```diff
+- text in red
++ text in green
+! text in orange
+# text in gray
+@@ text in purple (and bold)@@
+```
+# Color Test Document
+
+## Second Heading
+
+This is a test to see how the colors work.
+
+![header](https://capsule-render.vercel.app/api?type=wave&color=gradient&height=300&section=footer&text=Rect&fontSize=90)
+
+![header](https://capsule-render.vercel.app/api?type=rounded&color=gradient&height=300&section=header&text=%20Code%20Kombat%20&fontSize=80&textBg=true&animation=fadeIn)
