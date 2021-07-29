@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { forkJoin } from 'rxjs';
-import { DialogService } from 'src/app/core/services/utils/DialogService';
-import { SpinnerService } from 'src/app/core/services/utils/SpinnerService';
+import { DialogService } from 'src/app/core/services/utils/dialog-service';
+import { SpinnerService } from 'src/app/core/services/utils/spinner-service';
 import { ModalComponent } from 'src/app/shared/components/modal/modal.component';
 import { SkillArea } from '../../models/skill-area.model';
 import { SkillItem } from '../../models/skill-item';
@@ -41,7 +41,6 @@ export class SkillsTreeComponent implements OnInit {
           this.skills = skills;
           console.log("Response: Skills -> "+JSON.stringify(this.skills)+" Areas -> "+JSON.stringify(this.skillAreas));
           this.buildHierarchy();
-          this.spinnerService.stop();
       },
       (error: any) => {
         this.spinnerService.stop();
@@ -61,16 +60,17 @@ export class SkillsTreeComponent implements OnInit {
       // nested item (has parent)
       else {
         let item: SkillItem = this.getItem(this.skillItems, area.parentId); //this.skillItems.filter( item => item.id === area.parentId)
-        if (item)
+        if (item.children)
           item.children.push({id: area.id, label: area.name, isArea: true, children: []})
       }
     }
     // skill at leaf
     for (let skill of this.skills) {
       let item: SkillItem = this.getItem(this.skillItems, skill.areaId);
-      if (item)
+      if (item.children)
         item.children.unshift({id: skill.id, label: skill.competence, isArea: false});           //push or unshift
     }
+    this.spinnerService.stop();
   }
 
   showAreaModal(parentAreaId: number) {
@@ -94,7 +94,8 @@ export class SkillsTreeComponent implements OnInit {
       else {    // if nested item
         const result: {items: SkillItem[], index: number} = this.getItemAreaChildren(this.skillItems, area.parentId);  
         let parent: SkillItem = result.items.filter(item => item.id == area.parentId)[0];
-        parent.children.push({id: area.id, label: area.name, isArea: true, children: []})
+        if (parent.children)
+          parent.children.push({id: area.id, label: area.name, isArea: true, children: []})
       }
     }
   }
@@ -105,7 +106,8 @@ export class SkillsTreeComponent implements OnInit {
     if (skill.competence) {
       const result: {items: SkillItem[], index: number} = this.getItemAreaChildren(this.skillItems, skill.areaId);  
       let parent: SkillItem = result.items.filter(item => item.id == skill.areaId)[0];
-      parent.children.unshift({id: skill.id, label: skill.competence, isArea: false})    }
+      if (parent.children)
+        parent.children.unshift({id: skill.id, label: skill.competence, isArea: false})    }
   }
 
   deleteArea(areaId: number) {

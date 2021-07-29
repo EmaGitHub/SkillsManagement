@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { forkJoin } from 'rxjs';
-import { DialogService } from 'src/app/core/services/utils/DialogService';
-import { SpinnerService } from 'src/app/core/services/utils/SpinnerService';
+import { DialogService } from 'src/app/core/services/utils/dialog-service';
+import { SpinnerService } from 'src/app/core/services/utils/spinner-service';
 import { SkillArea } from '../../models/skill-area.model';
 import { Skill } from '../../models/skill.model';
 import { SkillsService } from '../../services/skills.service';

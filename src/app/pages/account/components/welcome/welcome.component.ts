@@ -1,10 +1,11 @@
-import { Subscription } from 'rxjs';
+import { interval, Subscription } from 'rxjs';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { UserService } from 'src/app/core/services/utils/user.service';
 import { MatButtonToggleChange } from '@angular/material/button-toggle';
 import { LanguageService } from 'src/app/core/services/general-config/language.service';
 import { Lang } from 'src/app/shared/domain/enums/lang';
 import { SideMenuService } from 'src/app/core/services/utils/side-menu.service';
+import { takeWhile } from 'rxjs/operators';
 
 @Component({
   selector: 'app-welcome',
@@ -21,9 +22,11 @@ export class WelcomeComponent implements OnInit, OnDestroy {
   username: string = '';
   password: string = '';
 
+  deg: number;
+
   private langSubscription: Subscription;
 
-  constructor(private userService: UserService, private sideMenuService: SideMenuService, private languageService: LanguageService) { }
+  constructor(private languageService: LanguageService) { }
 
   ngOnInit(): void {
 
@@ -34,7 +37,6 @@ export class WelcomeComponent implements OnInit, OnDestroy {
       err => {
         console.error(err);
       });
-
   }
 
   public changeLangHandler(langToggleChange: MatButtonToggleChange) {

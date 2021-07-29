@@ -1,9 +1,9 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
-import { AuthenticationService } from 'src/app/core/services/utils/AuthenticationService';
-import { DialogService } from 'src/app/core/services/utils/DialogService';
-import { SpinnerService } from 'src/app/core/services/utils/SpinnerService';
+import { AuthenticationService } from 'src/app/core/services/utils/authentication-service';
+import { DialogService } from 'src/app/core/services/utils/dialog-service';
+import { SpinnerService } from 'src/app/core/services/utils/spinner-service';
 
 @Component({
   selector: 'app-register',

@@ -5,7 +5,7 @@ import { Lang } from '../../domain/enums/lang';
 import { LanguageService } from 'src/app/core/services/general-config/language.service';
 import { LeftMenuService } from 'src/app/core/services/utils/left-menu.service';
 import { UserService } from 'src/app/core/services/utils/user.service';
-import { User } from 'src/app/pages/account/models/User';
+import { User } from 'src/app/pages/users/models/User';
 
 @Component({
   selector: 'app-sidebar',

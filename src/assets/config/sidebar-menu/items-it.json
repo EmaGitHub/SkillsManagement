@@ -49,7 +49,7 @@
         "isNavigable": true,
         "level": 2,
         "roles": [1],
-        "url": "/skills/home"
+        "url": "/users/create"
       },
       {
         "id": "usersList",
@@ -57,7 +57,7 @@
         "isNavigable": true,
         "level": 2,
         "roles": [1],
-        "url": "/skills/home"
+        "url": "/users/search"
       }
     ]
   },

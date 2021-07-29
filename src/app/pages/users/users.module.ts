@@ -1,15 +1,35 @@
+import { CommonModule } from "@angular/common";
+import { HttpClient } from "@angular/common/http";
 import { NgModule } from "@angular/core";
-import { SharedModule } from "src/app/shared/shared.module";
+import { TranslateModule, TranslateLoader } from "@ngx-translate/core";
+import { HttpLoaderFactory, SharedModule } from "src/app/shared/shared.module";
+import { UsersListComponent } from './components/users-list/users-list.component';
+import { UsersService } from "./services/users.service";
+import { UserDetailsComponent } from './components/user-details/user-details.component';
+import { CreateUserComponent } from './components/create-user/create-user.component';
 
 @NgModule({
     declarations: [
 
-    ],
+    UsersListComponent,
+
+    UserDetailsComponent,
+
+    CreateUserComponent],
     imports: [
-        SharedModule
+        CommonModule,
+        SharedModule,
+        // *ngx-translate
+        TranslateModule.forRoot({
+        loader: {
+            provide: TranslateLoader,
+            useFactory: HttpLoaderFactory,
+            deps: [HttpClient]
+        }
+        })
     ], 
     providers: [
-
+        UsersService
     ]
 })
 

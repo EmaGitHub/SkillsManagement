@@ -1,0 +1,34 @@
+<mat-card class="fadeIn">
+    <mat-card-header>
+        <mat-card-title>
+            {{'label.createUserTitle' | translate}}
+        </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <form class="user-form" (ngSubmit)="addUser()" [formGroup]="newUserForm">
+            <div class="row">
+                <div class="col-lg-4 col-md-12">
+                    <mat-form-field class="user-field">
+                        <input matInput placeholder="Username" [(ngModel)]="data.username" formControlName="username">
+                    </mat-form-field>
+                </div>
+
+                <div class="col-lg-4 col-md-12">
+                    <mat-form-field class="user-field">
+                        <input matInput placeholder="{{'label.firstName' | translate}}" [(ngModel)]="data.firstName" formControlName="firstName">
+                    </mat-form-field>
+                </div>
+
+                <div class="col-lg-4 col-md-12">
+                    <mat-form-field class="user-field">
+                        <input matInput placeholder="{{'label.lastName' | translate}}" [(ngModel)]="data.lastName" formControlName="lastName">
+                    </mat-form-field>
+                </div>
+            </div>
+        
+            <button mat-button class="create-button" type="submit">
+                <span>{{'label.create' | translate}}</span>
+            </button>
+        </form>
+    </mat-card-content>
+</mat-card>

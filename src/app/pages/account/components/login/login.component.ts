@@ -2,13 +2,13 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
-import { AuthenticationService } from 'src/app/core/services/utils/AuthenticationService';
-import { DialogService } from 'src/app/core/services/utils/DialogService';
+import { AuthenticationService } from 'src/app/core/services/utils/authentication-service';
+import { DialogService } from 'src/app/core/services/utils/dialog-service';
 import { SideMenuService } from 'src/app/core/services/utils/side-menu.service';
-import { SpinnerService } from 'src/app/core/services/utils/SpinnerService';
+import { SpinnerService } from 'src/app/core/services/utils/spinner-service';
 import { UserService } from 'src/app/core/services/utils/user.service';
 import { JwtResponse } from 'src/app/shared/domain/auth/jwt-response';
-import { User } from '../../models/User';
+import { User } from '../../../users/models/User';
 
 @Component({
   selector: 'app-login',

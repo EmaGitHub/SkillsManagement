@@ -1,0 +1,24 @@
+:host {
+    .user-form {
+        margin: 10px 10px;
+
+        .user-field {
+            padding: 4px 10px 0px 10px;
+            margin: 10px 0px;
+            background-color: white;
+            border-radius: 8px;
+            border: 1px solid rgb(163, 162, 162);
+            height: 60px;
+            width: inherit;
+            box-shadow: 1px 1px 2px grey;
+        }
+        
+        .create-button {
+            border: 1px solid gray;
+            border-radius: 8px;
+            margin: 10px 0;
+            box-shadow: 1px 1px 2px grey;
+        }
+    }
+
+}

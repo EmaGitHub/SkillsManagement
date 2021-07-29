@@ -1,0 +1,25 @@
+:host {
+    table {
+        width: 100%;
+        border: 1px solid rgb(163, 162, 162);
+        border-bottom: 2px solid #d0d0d0;
+      }
+      
+      .filter-field {
+        padding: 4px 10px 0px 10px;
+        margin: 10px 0px;
+        background-color: white;
+        border-radius: 8px;
+        border: 1px solid rgb(163, 162, 162);
+        height: 60px;
+        width: inherit;
+      }
+
+      .arrow-icon {
+        color: #515a79;
+        border: 1px solid #d6d6d6;
+        padding: 4px 10px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+}

@@ -1,7 +1,10 @@
+import { Role } from "./Role";
+
 export interface User {
-    userId: number,
+    userId?: number,
     username: string, 
     firstName: string,
     lastName: string,
-    token: string
+    roles?: Role[],
+    token?: string
 }

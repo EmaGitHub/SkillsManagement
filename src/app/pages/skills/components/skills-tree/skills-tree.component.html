@@ -3,13 +3,13 @@
         <mat-card-title class="title">
             {{'label.skillsTreeTitle' | translate}}
         </mat-card-title>
-        <span class="button-span">
-            <span class="plus-icon" (click)="showAreaModal(-1)">
+        <span matTooltip="{{'label.newSkillArea' | translate}}" matTooltipPosition="above">
+            <span class="root-icon" (click)="showAreaModal(-1)">
                 <i class="fa fa-folder"></i>            
             </span>
         </span>
     </mat-card-header>
-    <mat-card-content>
+    <mat-card-content class="content">
         <mat-accordion [multi]="true">
             <div *ngFor="let item of skillItems">
                 <app-skill-item [item]="item" (addSkill)="showSkillModal($event)" (addArea)="showAreaModal($event)" 

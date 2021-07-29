@@ -2,7 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormGroupDirective } from '@angular/forms';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
-import { DialogService } from 'src/app/core/services/utils/DialogService';
+import { DialogService } from 'src/app/core/services/utils/dialog-service';
 import { SkillArea } from '../../models/skill-area.model';
 import { SkillsService } from '../../services/skills.service';
 

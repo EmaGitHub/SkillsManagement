@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormGroupDirective } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
-import { DialogService } from 'src/app/core/services/utils/DialogService';
+import { DialogService } from 'src/app/core/services/utils/dialog-service';
 import { Skill } from '../../models/skill.model';
 import { SkillsService } from '../../services/skills.service';
 

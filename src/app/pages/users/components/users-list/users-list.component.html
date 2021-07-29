@@ -1,0 +1,57 @@
+<mat-card class="fadeIn">
+    <mat-card-header>
+        <mat-card-title>
+            {{'label.usersListTitle' | translate}}
+        </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+
+        <mat-form-field class="filter-field">
+            <mat-label>{{ 'label.filter' | translate }}</mat-label>
+            <input matInput (keyup)="applyFilter($event)" placeholder="{{ 'label.searchFilter' | translate }}" #input>
+        </mat-form-field>
+        
+        <table mat-table [dataSource]="dataSource">
+            <!-- Id Column -->
+            <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef> Id </th>
+            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+            </ng-container>
+            
+            <!-- Username Column -->
+            <ng-container matColumnDef="username">
+                <th mat-header-cell *matHeaderCellDef> Username </th>
+                <td mat-cell *matCellDef="let element"> {{element.username}} </td>
+                </ng-container>
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> {{ 'label.firstName' | translate}} </th>
+            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+            </ng-container>
+        
+            <!-- LastName Column -->
+            <ng-container matColumnDef="lastName">
+            <th mat-header-cell *matHeaderCellDef> {{ 'label.lastName' | translate}} </th>
+            <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
+            </ng-container>
+
+            <!-- Details Column -->
+            <ng-container matColumnDef="details">
+                <th mat-header-cell *matHeaderCellDef> {{ 'label.details' | translate}} </th>
+                <td mat-cell *matCellDef="let element">
+                    <span class="arrow-icon" [routerLink]="['../details', element.id]">
+                        <i class="fa fa-arrow-right"></i>
+                    </span> </td>
+            </ng-container>
+        
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        
+            <!-- Row shown when there is no matching data. -->
+            <tr class="mat-row" *matNoDataRow>
+            <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+            </tr>
+        </table>
+    </mat-card-content>
+</mat-card>

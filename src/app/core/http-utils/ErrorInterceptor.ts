@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpRequest, HttpHandler, HttpEvent, HttpInterceptor } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { AuthenticationService } from '../services/utils/AuthenticationService';
-import { DialogService } from '../services/utils/DialogService';
+import { AuthenticationService } from '../services/utils/authentication-service';
+import { DialogService } from '../services/utils/dialog-service';
 import { TranslateService } from '@ngx-translate/core';
 
 @Injectable()
