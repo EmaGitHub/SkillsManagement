@@ -33,7 +33,8 @@
         "createUserTitle": "Create new user",
         "filter": "Filter", 
         "searchFilter": "Search filter",
-        "details": "Details"
+        "details": "Details",
+        "userCompetences": "User competences"
     },
     "menu": {
         "search": "Search",

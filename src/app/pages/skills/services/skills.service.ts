@@ -17,7 +17,6 @@ export class SkillsService {
         return this.httpClient.get<SkillArea[]>("skill/area")
     }
 
-    // deprecated
     public addSkill(skill: any): Observable<Skill> {
         return this.httpClient.post<any>("skill", skill)
     }
@@ -26,10 +25,6 @@ export class SkillsService {
     public addSkillArea(skillAreaName: string): Observable<SkillArea> {
         let skillArea = {name: skillAreaName}
         return this.httpClient.post<any>("skill/area", skillArea)
-    }
-
-    public addSkillNew(skill: Skill): Observable<Skill> {
-        return this.httpClient.post<any>("skill", skill);
     }
 
     public addArea(skillArea: SkillArea): Observable<SkillArea> {

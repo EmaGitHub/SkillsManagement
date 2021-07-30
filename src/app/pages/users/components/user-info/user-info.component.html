@@ -1,0 +1,16 @@
+<mat-card class="fadeIn">
+    <mat-card-header>
+        <mat-card-title>
+            {{'label.userDetails' | translate}}
+        </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        
+        Username: <b> {{ userInfo?.username ? userInfo?.username : 'ND' }} </b>
+        <br><br>
+        {{ 'label.firstName' | translate }}: <b> {{ userInfo?.firstName ? userInfo?.firstName : 'ND' }} </b>
+        <br>
+        {{ 'label.lastName' | translate }}: <b> {{ userInfo?.lastName ? userInfo?.lastName : 'ND' }} </b>
+
+    </mat-card-content>
+</mat-card>

@@ -67,7 +67,6 @@ export class SkillsTreeComponent implements OnInit {
     // skill at leaf
     for (let skill of this.skills) {
       let parentItem: SkillItem = this.getParentItem(this.skillItems, skill.areaId);
-      console.log("TEST "+skill.competence+" PARENT "+JSON.stringify(parentItem))
       if (parentItem.children)
        parentItem.children.unshift({id: skill.id, label: skill.competence, isArea: false});           //push or unshift
     }
@@ -95,6 +94,7 @@ export class SkillsTreeComponent implements OnInit {
       else {    // if nested item
         const result: {items: SkillItem[], index: number} = this.getItemAreaChildren(this.skillItems, area.parentId);  
         let parent: SkillItem = result.items.filter(item => item.id == area.parentId)[0];
+        console.log("PARENT "+JSON.stringify(parent))
         if (parent.children)
           parent.children.push({id: area.id, label: area.name, isArea: true, children: []})
       }

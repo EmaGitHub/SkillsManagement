@@ -7,6 +7,8 @@ import { UsersListComponent } from './components/users-list/users-list.component
 import { UsersService } from "./services/users.service";
 import { UserDetailsComponent } from './components/user-details/user-details.component';
 import { CreateUserComponent } from './components/create-user/create-user.component';
+import { UserInfoComponent } from './components/user-info/user-info.component';
+import { UserCompetencesComponent } from './components/user-competences/user-competences.component';
 
 @NgModule({
     declarations: [
@@ -15,7 +17,11 @@ import { CreateUserComponent } from './components/create-user/create-user.compon
 
     UserDetailsComponent,
 
-    CreateUserComponent],
+    CreateUserComponent,
+
+    UserInfoComponent,
+
+    UserCompetencesComponent],
     imports: [
         CommonModule,
         SharedModule,
