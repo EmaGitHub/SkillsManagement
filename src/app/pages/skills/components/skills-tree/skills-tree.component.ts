@@ -44,7 +44,7 @@ export class SkillsTreeComponent implements OnInit {
       },
       (error: any) => {
         this.spinnerService.stop();
-        console.log("Error response: "+error);
+        console.log("Error response: "+JSON.stringify(error));
         if (error.status != 401)
           this.dialogService.showTimedAlert(this.translateService.instant('message.error.genericError'), 1500);
       }
@@ -53,22 +53,23 @@ export class SkillsTreeComponent implements OnInit {
 
   buildHierarchy(): void {
     for (let area of this.skillAreas) {
-      // root item
+      // root area
       if (area.parentId == -1) {
         this.skillItems.push({id: area.id, label: area.name, isArea: true, children: []})
       }
-      // nested item (has parent)
+      // nested area (has parent)
       else {
-        let item: SkillItem = this.getItem(this.skillItems, area.parentId); //this.skillItems.filter( item => item.id === area.parentId)
-        if (item.children)
-          item.children.push({id: area.id, label: area.name, isArea: true, children: []})
+        let parentItem: SkillItem = this.getParentItem(this.skillItems, area.parentId); 
+        if (parentItem.children)
+          parentItem.children.push({id: area.id, label: area.name, isArea: true, children: []})
       }
     }
     // skill at leaf
     for (let skill of this.skills) {
-      let item: SkillItem = this.getItem(this.skillItems, skill.areaId);
-      if (item.children)
-        item.children.unshift({id: skill.id, label: skill.competence, isArea: false});           //push or unshift
+      let parentItem: SkillItem = this.getParentItem(this.skillItems, skill.areaId);
+      console.log("TEST "+skill.competence+" PARENT "+JSON.stringify(parentItem))
+      if (parentItem.children)
+       parentItem.children.unshift({id: skill.id, label: skill.competence, isArea: false});           //push or unshift
     }
     this.spinnerService.stop();
   }
@@ -152,13 +153,13 @@ export class SkillsTreeComponent implements OnInit {
     });
   }
 
-  getItem = function (subMenuItems: SkillItem[], id) {
+  getParentItem = function (subMenuItems: SkillItem[], id) {
     if (subMenuItems) {
         for (var i = 0; i < subMenuItems.length; i++) {
-            if (subMenuItems[i].id == id) {
+            if (subMenuItems[i].id == id && subMenuItems[i].isArea) {
                 return subMenuItems[i];
             }
-            var found = this.getItem(subMenuItems[i].children, id);
+            var found = this.getParentItem(subMenuItems[i].children, id);
             if (found) return found;
         }
     }

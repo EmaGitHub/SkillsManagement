@@ -30,7 +30,7 @@ export class SkillListComponent implements OnInit {
       },
       (error: any) => {
         this.spinnerService.stop();
-        console.log("Error response: "+error);
+        console.log("Error response: "+JSON.stringify(error));
         if (error.status != 401)
           this.dialogService.showTimedAlert(this.translateService.instant('message.error.genericError'), 1500);
       }

@@ -9,7 +9,10 @@ export class UsersService {
     constructor(private httpClient: HttpClient) {}
 
     public getUsers(): Observable<User[]> {
-        return this.httpClient.get<any>("user")
+        return this.httpClient.get<any>("user");
     }
 
+    public getUserInfo(id: number): Observable<User> {
+        return this.httpClient.get<User>(`user/${id}`);
+    }
 }

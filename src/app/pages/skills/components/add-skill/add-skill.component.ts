@@ -52,7 +52,7 @@ export class AddSkillComponent implements OnInit {
         },
         (err: any) => {
           console.log("Response error: "+JSON.stringify(err))
-          if (err.error.error && err.error.error === "DataIntegrityViolationException") {
+          if (err.error && err.error.error === "DataIntegrityViolationException") {
             setTimeout(() => {
               this.dialogService.showTimedAlert(this.translateService.instant('message.error.skillAlreadyPresent'), 1500);
             }, 0);

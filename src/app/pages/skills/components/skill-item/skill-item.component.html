@@ -6,7 +6,7 @@
             <i [ngClass]="dirExpanded == true ? 'fa fa-folder-open-o' : 'fa fa-folder-o'" aria-hidden="true"></i>
         </span>
         <span class="panel-title">
-            {{item.label}} (id = {{item.id}})
+            {{item.label}} (areaId = {{item.id}})
         </span>
         <span class="buttons">
             <span (click)="panelH._toggle()" matTooltip="{{'label.newSkill' | translate}}" matTooltipPosition="above">
@@ -38,7 +38,7 @@
     <ul>
         <li class="skill">
             <div>
-                {{item.label}} (id = {{item.id}})
+                {{item.label}} (skillId = {{item.id}})
                 <span class="buttons" matTooltip="{{'label.delete' | translate}}" matTooltipPosition="above">
                     <span class="trash-icon" (click)="deleteSkill(item.id)">
                         <i class="fa fa-trash"></i>
