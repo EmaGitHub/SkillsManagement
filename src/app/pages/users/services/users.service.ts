@@ -1,6 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
+import { Competence } from "../models/Competence";
 import { User } from "../models/User";
 
 @Injectable()
@@ -14,5 +15,9 @@ export class UsersService {
 
     public getUserInfo(id: number): Observable<User> {
         return this.httpClient.get<User>(`user/${id}`);
+    }
+
+    public addUserSkill(competence: Competence): Observable<any> {
+        return this.httpClient.post<any>(`competence`, competence);
     }
 }

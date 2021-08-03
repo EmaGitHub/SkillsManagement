@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { ModalComponent } from 'src/app/shared/components/modal/modal.component';
 
 @Component({
   selector: 'app-user-competences',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserCompetencesComponent implements OnInit {
 
+  @ViewChild('competenceModal') competenceModal: ModalComponent;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  competenceCreated(event: any) {
+    this.competenceModal.toggle(null);
   }
 
 }

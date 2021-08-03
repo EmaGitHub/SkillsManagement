@@ -12,3 +12,7 @@
 @import 'assets/css/overrides-material.scss';
 /* PrimeNG overrides */
 @import 'assets/css/overrides-primeng.scss';
+
+/* Mat Autocomplete on Modal Fixes */ 
+.cdk-overlay-container {z-index: 999999 !important;}
+

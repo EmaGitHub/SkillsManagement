@@ -1,0 +1,45 @@
+<div class="content">
+
+    <form (ngSubmit)="addUserCompetence()" [formGroup]="formControl" (keydown.enter)="$event.preventDefault()">
+        <mat-form-field class="filter-field" appearance="fill">
+            <mat-label>{{ 'label.pickACompetence' | translate }}</mat-label>
+            <input type="text"
+                matInput
+                [matAutocomplete]="auto"
+                formControlName="skillName">
+            <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+            <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                {{option}}
+            </mat-option>
+            </mat-autocomplete>
+        </mat-form-field>
+
+        <div class="level-span">
+            <mat-label class="level-label" tickInterval="auto">{{ 'label.competenceLevel' | translate }}</mat-label>
+            <span class="value">
+                {{slider.value}} /
+            </span>
+            <mat-form-field class="max-value-field">
+                <input type="number"
+                    matInput
+                    placeholder="Max" 
+                    [(ngModel)]="maxValue"
+                    formControlName="skillMaxValue">
+            </mat-form-field>
+        </div>
+
+        <mat-slider
+            class="slider"
+            thumbLabel
+            [displayWith]="formatLabel"
+            step="1"
+            min="0"
+            [(ngModel)]="skillValue"
+            [max]="maxValue"
+            #slider
+            formControlName="skillValue"
+            aria-label="units"></mat-slider>
+
+        <button mat-button type="submit" class="add-competence">{{'label.add' | translate}}</button>
+    </form>
+</div>

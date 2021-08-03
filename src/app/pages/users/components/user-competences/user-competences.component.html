@@ -6,6 +6,9 @@
     </mat-card-header>
     <mat-card-content>
 
+        <button class="add-competence" (click)="competenceModal.toggle(null); addCompetence.loadData();" mat-button>{{'label.addSkill' | translate}}</button>
 
     </mat-card-content>
 </mat-card>
+
+<app-modal [title]="'label.addSkill' | translate" #competenceModal><app-add-competence (closeEvent)="competenceCreated($event)" #addCompetence></app-add-competence></app-modal>

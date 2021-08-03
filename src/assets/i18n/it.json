@@ -17,6 +17,7 @@
         "createSkillTitle": "Aggiungi nuova competenza",
         "skillName": "Nome nuova competenza",
         "noArea": "Nessuna area di competenza",
+        "add": "Aggiungi",
         "addArea": "Aggiungi nuova area di competenza",
         "addSkill": "Aggiungi nuova competenza",
         "selectSkillArea": "Seleziona area di competenza",
@@ -34,7 +35,10 @@
         "filter": "Filtra", 
         "searchFilter": "Filtro di ricerca",
         "details": "Dettagli",
-        "userCompetences": "Competenze utente"
+        "userCompetences": "Competenze utente",
+        "pickACompetence": "Seleziona una competenza",
+        "competenceLevel": "Livello di competenza",
+        "maxValue": "Valore max"
     },
     "menu": {
         "search": "Ricerca",

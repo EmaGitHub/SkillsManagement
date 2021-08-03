@@ -1,0 +1,46 @@
+:host {
+    .content {
+        text-align: center;
+        width: 400px;
+        
+        .filter-field {
+            width: 90%;
+            padding: 4px 10px 0px 10px;
+            margin: 10px 0px;
+            background-color: white;
+            border-radius: 8px;
+            border: 1px solid rgb(163, 162, 162);
+            height: 60px;
+          }
+
+        .level-span {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            .level-label {
+                float: left;
+                font-style: italic;
+                margin-bottom: 8px;
+            }
+            .value {
+                margin-left: 20px;
+                padding-bottom: .4375em;
+            }
+            .max-value-field {
+                padding: 0 5px;
+                width: 60px;
+            }
+        }
+        .slider {
+            width: 85%;
+        }
+
+        .add-competence {
+            border: 1px solid gray;
+            border-radius: 8px;
+            margin: 10px 0;
+            color: #82929f;
+            box-shadow: 1px 1px 2px grey;
+        }
+    }
+}

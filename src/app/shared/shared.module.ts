@@ -28,6 +28,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatSliderModule } from '@angular/material/slider';
 
 // ngx-translate
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
@@ -140,7 +142,9 @@ const APP_CUSTOM_DATE_FORMATS = {
     MatCheckboxModule,
     MatButtonToggleModule,
     MatFormFieldModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatAutocompleteModule,
+    MatSliderModule
   ],
   exports: [
     BrowserModule,
@@ -188,6 +192,8 @@ const APP_CUSTOM_DATE_FORMATS = {
     MatCheckboxModule,
     MatButtonToggleModule,
     MatExpansionModule,
+    MatAutocompleteModule,
+    MatSliderModule,
     // *components
     PaginatorComponent,
     ModalComponent,

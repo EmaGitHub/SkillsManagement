@@ -9,6 +9,7 @@ import { UserDetailsComponent } from './components/user-details/user-details.com
 import { CreateUserComponent } from './components/create-user/create-user.component';
 import { UserInfoComponent } from './components/user-info/user-info.component';
 import { UserCompetencesComponent } from './components/user-competences/user-competences.component';
+import { AddCompetenceComponent } from './components/add-competence/add-competence.component';
 
 @NgModule({
     declarations: [
@@ -21,7 +22,9 @@ import { UserCompetencesComponent } from './components/user-competences/user-com
 
     UserInfoComponent,
 
-    UserCompetencesComponent],
+    UserCompetencesComponent,
+
+    AddCompetenceComponent],
     imports: [
         CommonModule,
         SharedModule,

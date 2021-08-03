@@ -34,6 +34,9 @@ table.mat-table tbody tr.mat-row td.mat-cell {
 // EXPANSION TABLE
 .mat-expansion-panel-header {
     border-bottom: 1px solid #e4f1ff;
+    .mat-content {
+        display: contents;
+    }
 }
 .mat-card-header-text {
     width: 100%;

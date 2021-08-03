@@ -16,6 +16,7 @@
         "loginLabel": "Go to login tab",
         "createSkillTitle": "Create new competence",
         "skillName": "New competence name",
+        "add": "Add",
         "addArea": "Add new competence area",
         "addSkill": "Add new competence",
         "noArea": "No competence area",
@@ -34,7 +35,10 @@
         "filter": "Filter", 
         "searchFilter": "Search filter",
         "details": "Details",
-        "userCompetences": "User competences"
+        "userCompetences": "User competences",
+        "pickACompetence": "Pick a competence",
+        "competenceLevel": "Competence level",
+        "maxValue": "Max value"
     },
     "menu": {
         "search": "Search",
@@ -45,7 +49,7 @@
         "skillsList": "Competences list",
         "users": "Users",
         "usersList": "Users directory",
-        "skillsTree": "Skills hierarchy",
+        "skillsTree": "Competences hierarchy",
         "createUser": "Create user"
     },
     "action": {

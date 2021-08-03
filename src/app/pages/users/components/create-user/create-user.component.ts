@@ -37,7 +37,6 @@ export class CreateUserComponent implements OnInit {
   }
 
   addUser() {
-
     if (this.newUserForm.valid) {
       this.spinnerService.start(""); 
       this.authService.register(this.data.firstName, this.data.lastName, this.data.username, "", false).subscribe(

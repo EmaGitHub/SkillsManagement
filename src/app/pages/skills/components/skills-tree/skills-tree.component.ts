@@ -93,8 +93,7 @@ export class SkillsTreeComponent implements OnInit {
       }
       else {    // if nested item
         const result: {items: SkillItem[], index: number} = this.getItemAreaChildren(this.skillItems, area.parentId);  
-        let parent: SkillItem = result.items.filter(item => item.id == area.parentId)[0];
-        console.log("PARENT "+JSON.stringify(parent))
+        let parent: SkillItem = result.items.filter(item => (item.id == area.parentId && item.isArea == true))[0];
         if (parent.children)
           parent.children.push({id: area.id, label: area.name, isArea: true, children: []})
       }
@@ -106,7 +105,8 @@ export class SkillsTreeComponent implements OnInit {
     // if skill creation succeeded
     if (skill.competence) {
       const result: {items: SkillItem[], index: number} = this.getItemAreaChildren(this.skillItems, skill.areaId);  
-      let parent: SkillItem = result.items.filter(item => item.id == skill.areaId)[0];
+      let parent: SkillItem = result.items.filter(item => (item.id == skill.areaId && item.isArea == true))[0];
+      console.log("TEST "+JSON.stringify(parent));
       if (parent.children)
         parent.children.unshift({id: skill.id, label: skill.competence, isArea: false})    }
   }

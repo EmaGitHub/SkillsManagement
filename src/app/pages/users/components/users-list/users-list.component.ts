@@ -27,10 +27,10 @@ export class UsersListComponent implements OnInit {
     this.retrieveUsers();
   }
 
-    applyFilter(event: Event) {
-      const filterValue = (event.target as HTMLInputElement).value;
-      this.dataSource.filter = filterValue.trim().toLowerCase();
-    }
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
   
   retrieveUsers() {
     this.spinnerService.start();
