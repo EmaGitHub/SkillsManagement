@@ -1,6 +1,11 @@
+import { User } from "./User";
+
 export interface Competence {
-    user_id: number, 
-    skill_id: number, 
-    level: number,
-    self_level: number
+    skillId: number, 
+    user: User, 
+    level?: number,
+    selfLevel?: number,
+    maxLevel?: number,
+    validationUserId: number,
+    validationDate?: Date
 }

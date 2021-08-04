@@ -45,6 +45,7 @@
         "globalSearch": "Global search",
         "profileSearch": "Profile search",
         "skills": "Competences",
+        "selfEvaluation": "Self evaluation",
         "createSkill": "Create competence",
         "skillsList": "Competences list",
         "users": "Users",
@@ -65,7 +66,8 @@
             "competenceCreated": "Competence created successfully",
             "yes": "Yes",
             "areaDeleted": "Area deleted", 
-            "skillDeleted": "Competence deleted"
+            "skillDeleted": "Competence deleted",
+            "skillAdded": "Competenced added"
         },
         "warn": {
             "noDataFound": "No data found",
@@ -74,7 +76,8 @@
             "deleteSkillArea": "Delete competence area",
             "deleteSkill": "Delete competence",
             "confirmDeleteSkillArea": "Are you sure you want to delete competence area and all associated skills?",
-            "confirmDeleteSkill": "Are you sure you want to delete competence?"
+            "confirmDeleteSkill": "Are you sure you want to delete competence?",
+            "competenceNotValid": "Not valid competence"
         },
         "error": {
             "error": "Error",

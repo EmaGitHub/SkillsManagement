@@ -45,6 +45,7 @@
         "globalSearch": "Ricerca globale",
         "profileSearch": "Ricerca per profilo",
         "skills": "Competenze",
+        "selfEvaluation": "Auto valutazione",
         "createSkill": "Crea competenza",
         "skillsList": "Lista competenze",
         "users": "Utenti",
@@ -66,7 +67,8 @@
             "competenceCreated": "Competenza creata correttamente",
             "yes": "Si",
             "areaDeleted": "Area rimossa", 
-            "skillDeleted": "Competenza rimossa"
+            "skillDeleted": "Competenza rimossa",
+            "skillAdded": "Competenza aggiunta"
         },
         "warn": {
             "noDataFound": "Nessun dato trovato",
@@ -75,7 +77,8 @@
             "deleteSkillArea": "Cancellazione area di competenze",
             "deleteSkill": "Cancellazione competenza",
             "confirmDeleteSkillArea": "Sei sicuro di voler cancellare l'area di competenza e tutte le competenze associate?",
-            "confirmDeleteSkill": "Sei sicuro di voler cancellare la competenza?"
+            "confirmDeleteSkill": "Sei sicuro di voler cancellare la competenza?",
+            "competenceNotValid": "Competenza non valida"
         },
         "error": {
             "error": "Errore",

@@ -70,6 +70,14 @@
     "icon": "modx",
     "children": [
       {
+        "id": "selfEvaluation",
+        "label": "menu.selfEvaluation",
+        "isNavigable": true,
+        "level": 2,
+        "roles": [1,2],
+        "url": "/skills/home"
+      },
+      {
         "id": "createSkill",
         "label": "menu.createSkill",
         "isNavigable": true,

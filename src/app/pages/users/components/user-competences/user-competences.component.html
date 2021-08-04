@@ -11,4 +11,4 @@
     </mat-card-content>
 </mat-card>
 
-<app-modal [title]="'label.addSkill' | translate" #competenceModal><app-add-competence (closeEvent)="competenceCreated($event)" #addCompetence></app-add-competence></app-modal>
+<app-modal [title]="'label.addSkill' | translate" #competenceModal><app-add-competence (closeEvent)="competenceCreated($event)" [userId]="userId" #addCompetence></app-add-competence></app-modal>

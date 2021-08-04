@@ -4,13 +4,6 @@ import { SpinnerService } from 'src/app/core/services/utils/spinner-service';
 import { User } from '../../models/User';
 import { UsersService } from '../../services/users.service';
 
-/* export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
-} */
-
 @Component({
   selector: 'app-users-list',
   templateUrl: './users-list.component.html',
