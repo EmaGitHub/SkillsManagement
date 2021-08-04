@@ -34,7 +34,7 @@ export class EditSkillsComponent implements OnInit {
 
   data: Skill = {
     id: -1,
-    competence: '',
+    name: '',
     areaId: -1,
     newCompetenceArea: ''
   };
@@ -118,11 +118,11 @@ export class EditSkillsComponent implements OnInit {
       this.skillsService.addSkillArea(this.data.newCompetenceArea).subscribe(
         (newSkillArea: any) =>  {
           let newSkill = {
-            competence: this.data.competence,
+            name: this.data.name,
             areaId: newSkillArea.id,
             newCompetenceArea: ''
           };
-          console.log("New skill Area created ",JSON.stringify(newSkillArea)+" NS "+newSkill);
+          console.log("New skill Area created ",JSON.stringify(newSkillArea)+" NewSkill "+newSkill);
           this.skillsService.addSkill(newSkill).subscribe(
             (data: any) => {
               this.spinnerService.stop();

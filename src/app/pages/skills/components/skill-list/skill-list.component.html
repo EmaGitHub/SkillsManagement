@@ -23,7 +23,7 @@
                     <ul>
                         <li class="skill" *ngFor="let skill of filteredList(area.id)">
                             <div>
-                                {{skill.competence}}
+                                {{skill.name}}
                                 <span class="trash-icon" (click)="deleteSkill(skill.id)">
                                     <i class="fa fa-trash"></i>
                                 </span>

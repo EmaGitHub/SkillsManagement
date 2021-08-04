@@ -39,7 +39,7 @@ export class AddSkillComponent implements OnInit {
     if (this.skillForm.valid) {
       console.log("Creation skill");
       let skill: Skill = {
-        competence: this.skillName,
+        name: this.skillName,
         description: this.description,
         areaId: this.parentAreaId
       }

@@ -52,6 +52,7 @@ export class AddCompetenceComponent implements OnInit {
   }
 
   private _filter(value: string): string[] {
+    console.log("TTT "+value)
     const filterValue = value.toLowerCase();
     return this.options.filter(option => option.toLowerCase().includes(filterValue));
   }
@@ -62,7 +63,7 @@ export class AddCompetenceComponent implements OnInit {
       .subscribe(([skills]: [Skill[]]) => {
           this.skills = skills;
           console.log("Response: Skills -> "+JSON.stringify(this.skills));
-          this.options = this.skills.map(skill => skill.competence);
+          this.options = this.skills.map(skill => skill.name);
           this.formControl.get('skillName').setValue("");
           this.spinnerService.stop();
       },
@@ -86,7 +87,7 @@ export class AddCompetenceComponent implements OnInit {
       } else {
 
         this.spinnerService.start();
-        let skill: Skill = this.skills.filter(skill => skill.competence == this.formControl.get('skillName').value)[0];
+        let skill: Skill = this.skills.filter(skill => skill.name == this.formControl.get('skillName').value)[0];
         if (skill != undefined) {
           let currentUser : User = JSON.parse(localStorage.getItem('currentUser'));
           const competence: Competence = {

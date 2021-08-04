@@ -18,6 +18,10 @@ export class UsersService {
     }
 
     public addUserSkill(competence: Competence): Observable<any> {
-        return this.httpClient.post<any>(`competence`, competence);
+        return this.httpClient.post<any>(`skill`, competence);
+    }
+
+    public getUserSkills(): Observable<Competence[]> {
+        return this.httpClient.get<any>(`skill`);
     }
 }

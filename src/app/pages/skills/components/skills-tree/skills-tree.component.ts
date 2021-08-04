@@ -68,7 +68,7 @@ export class SkillsTreeComponent implements OnInit {
     for (let skill of this.skills) {
       let parentItem: SkillItem = this.getParentItem(this.skillItems, skill.areaId);
       if (parentItem.children)
-       parentItem.children.unshift({id: skill.id, label: skill.competence, isArea: false});           //push or unshift
+       parentItem.children.unshift({id: skill.id, label: skill.name, isArea: false});           //push or unshift
     }
     this.spinnerService.stop();
   }
@@ -103,12 +103,11 @@ export class SkillsTreeComponent implements OnInit {
   skillCreated(skill: Skill) {
     this.skillModal.toggle(null);
     // if skill creation succeeded
-    if (skill.competence) {
+    if (skill.name) {
       const result: {items: SkillItem[], index: number} = this.getItemAreaChildren(this.skillItems, skill.areaId);  
       let parent: SkillItem = result.items.filter(item => (item.id == skill.areaId && item.isArea == true))[0];
-      console.log("TEST "+JSON.stringify(parent));
       if (parent.children)
-        parent.children.unshift({id: skill.id, label: skill.competence, isArea: false})    }
+        parent.children.unshift({id: skill.id, label: skill.name, isArea: false})    }
   }
 
   deleteArea(areaId: number) {

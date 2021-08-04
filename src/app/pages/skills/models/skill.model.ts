@@ -1,6 +1,6 @@
 export interface Skill {
     id?: number,
-    competence: string,
+    name: string,
     description?: string
     areaId: number,
     newCompetenceArea?: string
