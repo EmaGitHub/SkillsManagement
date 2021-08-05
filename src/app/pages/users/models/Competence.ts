@@ -1,7 +1,8 @@
 import { User } from "./User";
 
 export interface Competence {
-    skillId: number, 
+    competenceId: number, 
+    competenceName?: string,
     user: User, 
     level?: number,
     selfLevel?: number,

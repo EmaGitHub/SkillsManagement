@@ -17,11 +17,11 @@ export class UsersService {
         return this.httpClient.get<User>(`user/${id}`);
     }
 
-    public addUserSkill(competence: Competence): Observable<any> {
+    public addUserCompetence(competence: Competence): Observable<any> {
         return this.httpClient.post<any>(`skill`, competence);
     }
 
-    public getUserSkills(): Observable<Competence[]> {
-        return this.httpClient.get<any>(`skill`);
+    public getUserCompetences(userId: number): Observable<Competence[]> {
+        return this.httpClient.get<any>(`skill/list/${userId}`);
     }
 }

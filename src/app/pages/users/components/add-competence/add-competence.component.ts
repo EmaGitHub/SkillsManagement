@@ -52,7 +52,6 @@ export class AddCompetenceComponent implements OnInit {
   }
 
   private _filter(value: string): string[] {
-    console.log("TTT "+value)
     const filterValue = value.toLowerCase();
     return this.options.filter(option => option.toLowerCase().includes(filterValue));
   }
@@ -91,7 +90,7 @@ export class AddCompetenceComponent implements OnInit {
         if (skill != undefined) {
           let currentUser : User = JSON.parse(localStorage.getItem('currentUser'));
           const competence: Competence = {
-            skillId: skill.id, 
+            competenceId: skill.id, 
             user: {
               id: this.userId
             }, 
@@ -100,7 +99,7 @@ export class AddCompetenceComponent implements OnInit {
             validationUserId: currentUser.id,
             validationDate: new Date()
           };
-          this.userService.addUserSkill(competence).subscribe(
+          this.userService.addUserCompetence(competence).subscribe(
             (resp: any) => {
               console.log("Resp "+JSON.stringify(resp));
               this.spinnerService.stop();
