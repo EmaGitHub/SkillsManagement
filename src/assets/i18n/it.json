@@ -83,7 +83,7 @@
         "error": {
             "error": "Errore",
             "wrongCredentials": "Credenziali non valide",
-            "genericError": "Si e' verificato un errore",
+            "genericError": "Si è verificato un errore",
             "loginFailed": "Login fallita",
             "dataInconsistencyError": "Errore di inconsistenza dati",
             "logoutFailed": "Disconnessione fallita",
