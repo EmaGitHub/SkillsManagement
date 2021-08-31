@@ -107,7 +107,8 @@ export class SkillsTreeComponent implements OnInit {
       const result: {items: SkillItem[], index: number} = this.getItemAreaChildren(this.skillItems, skill.areaId);  
       let parent: SkillItem = result.items.filter(item => (item.id == skill.areaId && item.isArea == true))[0];
       if (parent.children)
-        parent.children.unshift({id: skill.id, label: skill.name, isArea: false})    }
+        parent.children.unshift({id: skill.id, label: skill.name, isArea: false})    
+    }
   }
 
   deleteArea(areaId: number) {
